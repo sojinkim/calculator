@@ -96,7 +96,7 @@
 }
 
 - (IBAction)clearPressed:(UIButton *)sender {
-    [self.brain initialize];
+    [self.brain dropCurrentCalculation];
     [self updateDisplay];
 }
 

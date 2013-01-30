@@ -27,6 +27,7 @@
 
 
 - (void)initialize;
+- (void)dropCurrentCalculation;
 
 - (void)processDigit:(int)digit;
 - (void)processOperator:(int)op;

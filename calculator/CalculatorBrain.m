@@ -25,7 +25,13 @@
     }
     
     NSLog(@"brain emptied");
-    self.leftOperand = self.rightOperand = self.memoryStore = 0;
+    self.operatorString = -1;
+    self.state = self.initialState;
+}
+
+- (void)dropCurrentCalculation
+{
+    self.leftOperand = self.rightOperand = 0;
     self.operatorString = -1;
     self.state = self.initialState;
 }

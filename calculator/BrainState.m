@@ -36,9 +36,12 @@
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
     
     if (4 == func) // mr
+    {
         realBrain.leftOperand = realBrain.memoryStore;
-
-    return YES;
+        realBrain.state = realBrain.gettingLeftOperandState;
+        return YES;
+    }
+    else return NO;
 }
 @end
 
@@ -64,6 +67,20 @@
     realBrain.operatorString = op; // overwrite
     
     return NO;
+}
+
+- (BOOL)processMemoryFunction:(id)brain :(int)func
+{
+    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
+    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    
+    if (4 == func) // mr
+        realBrain.rightOperand = realBrain.memoryStore;
+    
+    realBrain.state = realBrain.gettingRightOperandState;
+    realBrain.amITakingRightOperand = YES;
+    
+    return YES;
 }
 @end
 
