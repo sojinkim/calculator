@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -14,7 +14,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cQi-gG-1fe" userLabel="Result Container">
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="42.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-Jc-ZVG" userLabel="Result Label">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-Jc-ZVG" userLabel="Result Label">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="264" id="H7D-62-5xx"/>
@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="height" constant="88" type="user" id="oGs-aQ-qOE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="p5r-Gk-5b9"/>
@@ -44,7 +44,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -53,9 +53,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lzz-9f-ccE"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ySs-9a-6ip"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" type="user" id="deR-Fv-0cf"/>
@@ -68,7 +69,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -77,9 +78,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rum-Do-UKY"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="Dl1-jv-9gJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" type="user" id="Aqj-Rd-Thl"/>
@@ -92,7 +94,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -101,9 +103,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="a6A-bD-xia"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="zPs-6d-XVa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Moo-d1-uFV"/>
@@ -116,7 +119,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -125,6 +128,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lhS-jc-u5i"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ebH-gW-l20"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voS-6k-Pac">
@@ -139,7 +143,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -148,6 +152,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="dLY-7h-E4e"/>
+                                    <action selector="signPressed:" destination="2" eventType="touchUpInside" id="fF6-DJ-FnF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97s-La-8KQ">
@@ -162,7 +167,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -171,9 +176,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="E5M-gh-0d4"/>
+                                    <action selector="clearPressed:" destination="2" eventType="touchUpInside" id="e8k-Sj-VNA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-hf-rCo">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-hf-rCo">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="rpr-Yq-PjK"/>
@@ -185,7 +191,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -194,9 +200,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="xEd-jW-7yi"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="uNH-c9-FQ6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAX-NE-dCs">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAX-NE-dCs">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" type="user" id="XYS-5T-DeF"/>
@@ -208,7 +215,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -217,6 +224,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="Nek-ll-c08"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ARd-Fq-nAV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-ox-cAb">
@@ -231,7 +239,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -240,6 +248,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="BdP-AD-o3j"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="Zx6-Cd-IaL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h49-OC-t8x">
@@ -254,7 +263,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -263,9 +272,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rd8-zJ-Lpj"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="j8V-bT-FWS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-FV-ez4">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-FV-ez4">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="2yS-ty-Bzt"/>
@@ -277,7 +287,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -286,6 +296,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="vAC-Sn-AKO"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="XPW-Rv-v0B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9K6-5N-hnm">
@@ -300,7 +311,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -309,6 +320,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="w3a-YK-F4y"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="0m1-Jc-iaf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifv-IR-tiQ">
@@ -323,7 +335,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -332,6 +344,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="fdA-HM-t6w"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="kqu-h0-6JA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-Dz-qsv">
@@ -346,7 +359,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -355,6 +368,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="6Gm-HK-FZc"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="R2o-CY-vTP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-3Y-Mnw">
@@ -369,7 +383,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -378,6 +392,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="xhn-JH-7aF"/>
+                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="a3d-Sm-hiS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-9U-Gwg">
@@ -392,7 +407,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -401,6 +416,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="bjM-Dv-bzj"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="NhE-oj-cCG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znk-56-ukd">
@@ -415,7 +431,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -424,6 +440,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="C0X-gz-dj6"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="E4m-4b-nWc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1o-Py-htZ">
@@ -438,7 +455,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -446,7 +463,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="ic2-lv-n54"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="oSx-h9-0rr"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="aWr-hb-4l6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKm-TE-Ve3">
@@ -461,7 +479,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -470,6 +488,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="aQA-8A-2py"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="VyJ-pl-zXk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-Hs-ffX">
@@ -484,7 +503,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -493,6 +512,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="ci7-Wu-6he"/>
+                                    <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="4ey-KQ-oBf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJq-ha-PDy">
@@ -507,7 +527,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -516,6 +536,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="jYg-Yb-vAJ"/>
+                                    <action selector="enterPressed:" destination="2" eventType="touchUpInside" id="xyb-qB-q8t"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-de-spT">
@@ -530,7 +551,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
-                                    <color key="titleColor" patternImage="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" colorSpace="pattern"/>
+                                    <color key="titleColor" patternImage="9ABBD1D8-F4B9-4103-821E-049352469C60" colorSpace="pattern"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -539,6 +560,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="NB5-HD-I3C"/>
+                                    <action selector="decimalPressed:" destination="2" eventType="touchUpInside" id="Od7-Ue-JZc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -625,10 +647,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-130" y="7"/>
         </scene>
     </scenes>
     <resources>
-        <image name="A8F57CF1-C898-4DA6-9A04-99F6E27EBFF8" width="256" height="256">
+        <image name="9ABBD1D8-F4B9-4103-821E-049352469C60" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -5022,7 +5045,13 @@ BAJoAAQCcAAEAnMABAKFAAQCiAAEAo0AAAAAAAAEAQAAAAAAAABCAAAAAAAAAAAAAAAAAAQCjw
         <class className="CalculatorViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
             <relationships>
-                <relationship kind="action" name="buttonPressed:"/>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="clearPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="decimalPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="digitPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="enterPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="operatorPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="signPressed:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button0" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button2" candidateClass="UIButton"/>

@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorViewController.h"
+#import "CalculatorBrain.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface CalculatorViewController ()
@@ -37,6 +38,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *button8;
 @property (nonatomic, weak) IBOutlet UIButton *button9;
 
+@property (nonatomic, strong) CalculatorBrain *brain;
+
 @end
 
 @implementation CalculatorViewController
@@ -59,9 +62,54 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonPressed:(id)sender
+- (CalculatorBrain *)brain
 {
-    NSLog(@"Button pressed:%@", ((UIButton *)sender).currentTitle);
+    if (!_brain) {
+        _brain = [[CalculatorBrain alloc] init];
+        [_brain initialize];
+    }
+    return _brain;
 }
+
+- (void) updateDisplay
+{
+    self.resultLabel.text = [NSString stringWithFormat:@"%g",(self.brain.amITakingRightOperand?self.brain.rightOperand:self.brain.leftOperand)];
+}
+
+- (IBAction)buttonPressed:(UIButton *)sender
+{
+    NSLog(@"Button pressed:%@", sender.currentTitle);
+}
+
+- (IBAction)digitPressed:(UIButton *)sender {
+    [self.brain processDigit:[sender tag]];
+    [self updateDisplay];
+}
+
+- (IBAction)decimalPressed:(UIButton *)sender {
+    NSLog(@"not implemented");
+}
+
+- (IBAction)signPressed:(UIButton *)sender {
+    [self.brain processSign];
+    [self updateDisplay];
+}
+
+- (IBAction)clearPressed:(UIButton *)sender {
+    [self.brain initialize];
+    [self updateDisplay];
+}
+
+- (IBAction)enterPressed:(UIButton *)sender {
+    [self.brain processEnter];
+    [self updateDisplay];
+}
+
+- (IBAction)operatorPressed:(UIButton *)sender {
+    [self.brain processOperator:[sender tag]];
+    [self updateDisplay];
+}
+
+
 
 @end

@@ -18,6 +18,8 @@
 		558202A116B815E2007522B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 558202A016B815E2007522B4 /* Default-568h@2x.png */; };
 		558202A416B815E2007522B4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558202A216B815E2007522B4 /* MainStoryboard.storyboard */; };
 		558202A716B815E2007522B4 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558202A616B815E2007522B4 /* CalculatorViewController.m */; };
+		5591D4D916B9828600CD32EF /* BrainState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5591D4D616B9828600CD32EF /* BrainState.m */; };
+		5591D4DA16B9828600CD32EF /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5591D4D816B9828600CD32EF /* CalculatorBrain.m */; };
 		9FF6754416B8FBBE00C2B233 /* Pattern - Gingham.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */; };
 		9FF6754516B8FBBE00C2B233 /* Pattern - Gingham@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,10 @@
 		558202A316B815E2007522B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		558202A516B815E2007522B4 /* CalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		558202A616B815E2007522B4 /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		5591D4D516B9828600CD32EF /* BrainState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrainState.h; sourceTree = "<group>"; };
+		5591D4D616B9828600CD32EF /* BrainState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrainState.m; sourceTree = "<group>"; };
+		5591D4D716B9828600CD32EF /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		5591D4D816B9828600CD32EF /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 		9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham.png"; sourceTree = "<group>"; };
 		9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +93,10 @@
 		5582029016B815E2007522B4 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				5591D4D516B9828600CD32EF /* BrainState.h */,
+				5591D4D616B9828600CD32EF /* BrainState.m */,
+				5591D4D716B9828600CD32EF /* CalculatorBrain.h */,
+				5591D4D816B9828600CD32EF /* CalculatorBrain.m */,
 				5582029916B815E2007522B4 /* CalculatorAppDelegate.h */,
 				5582029A16B815E2007522B4 /* CalculatorAppDelegate.m */,
 				558202A216B815E2007522B4 /* MainStoryboard.storyboard */,
@@ -193,6 +203,8 @@
 				5582029716B815E2007522B4 /* main.m in Sources */,
 				5582029B16B815E2007522B4 /* CalculatorAppDelegate.m in Sources */,
 				558202A716B815E2007522B4 /* CalculatorViewController.m in Sources */,
+				5591D4D916B9828600CD32EF /* BrainState.m in Sources */,
+				5591D4DA16B9828600CD32EF /* CalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
