@@ -18,6 +18,8 @@
 		558202A116B815E2007522B4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 558202A016B815E2007522B4 /* Default-568h@2x.png */; };
 		558202A416B815E2007522B4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558202A216B815E2007522B4 /* MainStoryboard.storyboard */; };
 		558202A716B815E2007522B4 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558202A616B815E2007522B4 /* CalculatorViewController.m */; };
+		9FF6754416B8FBBE00C2B233 /* Pattern - Gingham.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */; };
+		9FF6754516B8FBBE00C2B233 /* Pattern - Gingham@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		558202A316B815E2007522B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		558202A516B815E2007522B4 /* CalculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		558202A616B815E2007522B4 /* CalculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham.png"; sourceTree = "<group>"; };
+		9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				558202A216B815E2007522B4 /* MainStoryboard.storyboard */,
 				558202A516B815E2007522B4 /* CalculatorViewController.h */,
 				558202A616B815E2007522B4 /* CalculatorViewController.m */,
+				9FF6754116B8FAB700C2B233 /* assets */,
 				5582029116B815E2007522B4 /* Supporting Files */,
 			);
 			path = calculator;
@@ -105,6 +110,15 @@
 				558202A016B815E2007522B4 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FF6754116B8FAB700C2B233 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */,
+				9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,8 @@
 				5582029F16B815E2007522B4 /* Default@2x.png in Resources */,
 				558202A116B815E2007522B4 /* Default-568h@2x.png in Resources */,
 				558202A416B815E2007522B4 /* MainStoryboard.storyboard in Resources */,
+				9FF6754416B8FBBE00C2B233 /* Pattern - Gingham.png in Resources */,
+				9FF6754516B8FBBE00C2B233 /* Pattern - Gingham@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +315,7 @@
 				558202AC16B815E2007522B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

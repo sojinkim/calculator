@@ -7,8 +7,12 @@
 //
 
 #import "CalculatorViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CalculatorViewController ()
+
+@property (nonatomic, weak) IBOutlet UIView *resultContainer;
+@property (nonatomic, weak) IBOutlet UILabel *resultLabel;
 
 @end
 
@@ -17,7 +21,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Pattern - Gingham.png"]];
+
+    CALayer *layer = self.resultContainer.layer;
+    layer.borderWidth = 2.0f;
+    layer.borderColor = [UIColor blackColor].CGColor;
+    layer.cornerRadius = 6.0f;
 }
 
 - (void)didReceiveMemoryWarning
