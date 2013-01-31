@@ -8,6 +8,7 @@
 
 #import "GettingLeftOperandState.h"
 #import "CalculatorBrain.h"
+#import "OperatorUtil.h"
 
 
 @implementation GettingLeftOperandState
@@ -47,13 +48,13 @@
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
     
-    if (4 == func) // mr
+    if (memRecall == func) 
         realBrain.leftOperand = realBrain.memoryStore;
     
-    else if (5 == func) // 5, 6 =  m-, m+
+    else if (memSub == func) 
         realBrain.memoryStore -= realBrain.leftOperand;
     
-    else if (6 == func)
+    else if (memAdd == func)
         realBrain.memoryStore += realBrain.leftOperand;
     
     else

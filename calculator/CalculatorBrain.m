@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorBrain.h"
+#import "OperatorUtil.h"
 
 @interface CalculatorBrain ()
 
@@ -24,7 +25,7 @@
         self.gettingRightOperandState = [[GettingRightOperandState alloc] init];
     }
     
-    NSLog(@"brain emptied");
+    NSLog(@"brain enters init state");
     self.operatorString = -1;
     self.state = self.initialState;
 }
@@ -32,7 +33,7 @@
 - (void)dropCurrentCalculation
 {
     self.leftOperand = self.rightOperand = 0;
-    self.operatorString = -1;
+    self.operatorString = invalid;
     self.state = self.initialState;
 }
 
@@ -43,13 +44,13 @@
 
 - (void)processOperator:(int)op
 {
-    if (op < 4)
+    if ( [OperatorUtil isArithmeticOperator:op] )
         [self.state processOperator:self:op];
     
-    else if (7 == op) // mc
+    else if (memClear == op) // mc
             self.memoryStore = 0;
     else
-            [self.state processMemoryFunction:self :op];  // 4, 5, 6, = mr, m-, m+
+            [self.state processMemoryFunction:self :op];  // mr, m-, m+
 }
 
 - (void)processEnter
@@ -62,19 +63,18 @@
     [self.state processSign:self];
 }
 
-
 - (double)performOperation
 {
-    if (0 == self.operatorString) // isEqualToString:@"+"
+    if (add == self.operatorString) 
         self.leftOperand += self.rightOperand;
     
-    else if (1 == self.operatorString) // isEqualToString:@"-"
+    else if (sub == self.operatorString) 
         self.leftOperand -= self.rightOperand;
     
-    else if (2 == self.operatorString) // isEqualToString:@"×"
+    else if (multiply == self.operatorString) 
         self.leftOperand *= self.rightOperand;
     
-    else if (3 == self.operatorString) // isEqualToString:@"÷"
+    else if (divide == self.operatorString) 
         self.leftOperand /= self.rightOperand;
     
     else NSAssert(NO, @"not supported arithmetic operator");

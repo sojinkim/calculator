@@ -11,6 +11,7 @@
 		55271F6116BAA6C5007F6428 /* GettingOperatorState.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6016BAA6C5007F6428 /* GettingOperatorState.m */; };
 		55271F6416BAA724007F6428 /* GettingLeftOperandState.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6316BAA723007F6428 /* GettingLeftOperandState.m */; };
 		55271F6716BAA7D2007F6428 /* GettingRightOperandState.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */; };
+		55271F6A16BAB1BE007F6428 /* OperatorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6916BAB1BE007F6428 /* OperatorUtil.m */; };
 		5582028B16B815E2007522B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028A16B815E2007522B4 /* UIKit.framework */; };
 		5582028D16B815E2007522B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028C16B815E2007522B4 /* Foundation.framework */; };
 		5582028F16B815E2007522B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028E16B815E2007522B4 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 		55271F6316BAA723007F6428 /* GettingLeftOperandState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GettingLeftOperandState.m; sourceTree = "<group>"; };
 		55271F6516BAA7D2007F6428 /* GettingRightOperandState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GettingRightOperandState.h; sourceTree = "<group>"; };
 		55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GettingRightOperandState.m; sourceTree = "<group>"; };
+		55271F6816BAB1BE007F6428 /* OperatorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorUtil.h; sourceTree = "<group>"; };
+		55271F6916BAB1BE007F6428 /* OperatorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorUtil.m; sourceTree = "<group>"; };
 		5582028716B815E2007522B4 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5582028A16B815E2007522B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5582028C16B815E2007522B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 				5582029A16B815E2007522B4 /* CalculatorAppDelegate.m */,
 				558202A216B815E2007522B4 /* MainStoryboard.storyboard */,
 				558202A516B815E2007522B4 /* CalculatorViewController.h */,
+				55271F6816BAB1BE007F6428 /* OperatorUtil.h */,
+				55271F6916BAB1BE007F6428 /* OperatorUtil.m */,
 				558202A616B815E2007522B4 /* CalculatorViewController.m */,
 				9FF6754116B8FAB700C2B233 /* assets */,
 				5582029116B815E2007522B4 /* Supporting Files */,
@@ -229,6 +234,7 @@
 				55271F6116BAA6C5007F6428 /* GettingOperatorState.m in Sources */,
 				55271F6416BAA724007F6428 /* GettingLeftOperandState.m in Sources */,
 				55271F6716BAA7D2007F6428 /* GettingRightOperandState.m in Sources */,
+				55271F6A16BAB1BE007F6428 /* OperatorUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

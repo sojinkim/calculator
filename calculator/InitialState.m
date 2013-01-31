@@ -8,7 +8,7 @@
 
 #import "InitialState.h"
 #import "CalculatorBrain.h"
-
+#import "OperatorUtil.h"
 
 @implementation InitialState
 - (BOOL)processDigit :(id)brain :(int)digit
@@ -27,7 +27,7 @@
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
     
-    if (4 == func) // mr
+    if (memRecall == func) 
     {
         realBrain.leftOperand = realBrain.memoryStore;
         realBrain.state = realBrain.gettingLeftOperandState;

@@ -8,6 +8,7 @@
 
 #import "GettingOperatorState.h"
 #import "CalculatorBrain.h"
+#import "OperatorUtil.h"
 
 
 @implementation GettingOperatorState
@@ -38,7 +39,7 @@
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
     
-    if (4 == func) // mr
+    if (memRecall == func) 
         realBrain.rightOperand = realBrain.memoryStore;
     
     realBrain.state = realBrain.gettingRightOperandState;
