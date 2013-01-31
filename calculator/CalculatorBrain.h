@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BrainState.h"
+#import "InitialState.h"
+#import "GettingOperatorState.h"
+#import "GettingLeftOperandState.h"
+#import "GettingRightOperandState.h"
 
 @interface CalculatorBrain : NSObject
 // hold user input and math result

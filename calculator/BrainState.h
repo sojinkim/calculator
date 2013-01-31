@@ -19,14 +19,5 @@
  
 @end
 
-@interface InitialState : BrainState
-@end
 
-@interface GettingOperatorState : BrainState
-@end
 
-@interface GettingLeftOperandState : BrainState
-@end
-
-@interface GettingRightOperandState : BrainState
-@end
