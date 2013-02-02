@@ -14,11 +14,9 @@
 #import "GettingRightOperandState.h"
 
 @interface CalculatorBrain : NSObject
-                             // hold user input and math result
-@property (nonatomic) double leftOperand;
-@property (nonatomic) double rightOperand;
-@property (nonatomic) int operatorString;
+
 @property (nonatomic) double memoryStore;
+@property (nonatomic) NSString *inputString;
 
 @property (nonatomic) BOOL amITakingRightOperand; // ...
 
@@ -36,8 +34,16 @@
 - (void)processOperator:(int)op;
 - (void)processEnter;
 - (void)processSign;
+- (void)processDecimal;
 
 - (void)setState:(BrainState *)state;
 - (double)performOperation;  // returns result
+
+- (int)operatorString;
+- (double)leftOperand;
+- (double)rightOperand;
+- (void)setOperatorString:(int)op;
+- (void)setLeftOperand:(double)value;
+- (void)setRightOperand:(double)value;
 
 @end

@@ -9,5 +9,7 @@
 #import "BrainState.h"
 
 @interface GettingOperatorState : BrainState
+@property (nonatomic) int operatorString;
 
++ (GettingOperatorState *)brainStateOfBrain:(id)myBrain;
 @end

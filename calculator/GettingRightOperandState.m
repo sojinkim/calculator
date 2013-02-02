@@ -10,66 +10,85 @@
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
 
+@interface GettingRightOperandState() {
+    BOOL isDecimalPressed;
+    BOOL isSignPressed;
+}
+@property (nonatomic,weak) CalculatorBrain *brain;
+@end
+
 @implementation GettingRightOperandState
-- (BOOL)processDigit:(id)brain:(int)digit
-{
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
 
-    realBrain.rightOperand = realBrain.rightOperand * 10 + digit;
++ (GettingRightOperandState *)brainStateOfBrain:(id)myBrain
+{
+    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
+    
+    GettingRightOperandState *brainState = [[self alloc] init];
+    brainState.brain = myBrain;
+    return brainState;
+}
+
+- (BOOL)processDigit:(int)digit
+{
+    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+    self.operand = [self.brain.inputString doubleValue];
+    
+    NSLog(@"input num = %d input sring = %@ right operand = %g", digit, self.brain.inputString, self.operand);
 
     return NO;
 }
 
-- (BOOL)processOperator:(id)brain:(int)op
+- (BOOL)processOperator:(int)op
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    [self.brain performOperation];
+    self.operand = 0;
+    self.brain.operatorString = op;
+    self.brain.state = self.brain.gettingOperatorState;
+    self.brain.amITakingRightOperand = NO;
 
-    [realBrain performOperation];
-    realBrain.rightOperand = 0;
-    realBrain.operatorString = op;
-    realBrain.state = realBrain.gettingOperatorState;
-    realBrain.amITakingRightOperand = NO;
-
+    self.brain.inputString = nil;
+    isDecimalPressed = NO;
     return YES;
 }
 
-- (BOOL)processEnter:(id)brain
+- (BOOL)processEnter
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    [self.brain performOperation];
+    self.operand = 0;
+    self.brain.operatorString = -1;
+    self.brain.state = self.brain.gettingLeftOperandState;
+    self.brain.amITakingRightOperand = NO;
 
-    [realBrain performOperation];
-    realBrain.rightOperand = 0;
-    realBrain.operatorString = -1;
-    realBrain.state = realBrain.gettingLeftOperandState;
-    realBrain.amITakingRightOperand = NO;
-
+    self.brain.inputString = nil;
+    isDecimalPressed = NO;
     return YES;
 }
 
-- (BOOL)processSign:(id)brain
+- (BOOL)processSign
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-
-    realBrain.rightOperand *= -1;
+    self.operand *= -1;
 
     return NO;
 }
 
-- (BOOL)processMemoryFunction:(id)brain:(int)func
+- (BOOL)processDecimal
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    if (!isDecimalPressed) {
+        isDecimalPressed = YES;
+        self.brain.inputString = [self.brain.inputString stringByAppendingString:@"."];
+    }
+    
+    return NO;
+}
 
+- (BOOL)processMemoryFunction:(int)func
+{
     if (memRecall == func) {
-        realBrain.rightOperand = realBrain.memoryStore;
+        self.operand = self.brain.memoryStore;
     } else if (memSub == func) {
-        realBrain.memoryStore -= realBrain.rightOperand;
+        self.brain.memoryStore -= self.operand;
     } else if (memAdd == func) {
-        realBrain.memoryStore += realBrain.rightOperand;
+        self.brain.memoryStore += self.operand;
     } else {
         NSAssert(NO, @"not supported mem operator %d", func);
     }

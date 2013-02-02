@@ -9,5 +9,5 @@
 #import "BrainState.h"
 
 @interface InitialState : BrainState
-
++ (InitialState *)brainStateOfBrain:(id)myBrain;
 @end

@@ -10,26 +10,49 @@
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
 
-@implementation InitialState
-- (BOOL)processDigit:(id)brain:(int)digit
-{
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+@interface InitialState()
+@property (nonatomic, weak) CalculatorBrain* brain;
+@end
 
-    realBrain.leftOperand = digit;
-    realBrain.state = realBrain.gettingLeftOperandState;
+@implementation InitialState
+
++ (InitialState *)brainStateOfBrain:(id)myBrain
+{
+    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
+    
+    InitialState *brainState = [[self alloc] init];
+    brainState.brain = myBrain;
+    return brainState;
+}
+
+- (BOOL)processDigit:(int)digit
+{
+    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+    self.brain.leftOperand = [self.brain.inputString doubleValue];
+    
+    NSLog(@"input num = %d input sring = %@ left operand = %g", digit, self.brain.inputString, self.brain.leftOperand);
+    
+    self.brain.state = self.brain.gettingLeftOperandState;
 
     return YES;
 }
 
-- (BOOL)processMemoryFunction:(id)brain:(int)func
+- (BOOL)processDecimal
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"0."];
+    
+    NSLog(@"input sring = %@ left operand = %g", self.brain.inputString, self.brain.leftOperand);
+    
+    self.brain.state = self.brain.gettingLeftOperandState;
+    
+    return YES;
+}
 
+- (BOOL)processMemoryFunction:(int)func
+{
     if (memRecall == func) {
-        realBrain.leftOperand = realBrain.memoryStore;
-        realBrain.state = realBrain.gettingLeftOperandState;
+        self.brain.leftOperand = self.brain.memoryStore;
+        self.brain.state = self.brain.gettingLeftOperandState;
         return YES;
     } else {return NO; }
 }

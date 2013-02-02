@@ -10,40 +10,50 @@
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
 
+@interface GettingOperatorState()
+@property (nonatomic, weak) CalculatorBrain *brain;
+@end
+
 @implementation GettingOperatorState
-- (BOOL)processDigit:(id)brain:(int)digit
+
++ (GettingOperatorState *)brainStateOfBrain:(id)myBrain
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
+    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
+    
+    GettingOperatorState *brainState = [[self alloc] init];
+    brainState.brain = myBrain;
+    return brainState;
+}
 
-    realBrain.rightOperand = digit;
-    realBrain.state = realBrain.gettingRightOperandState;
-    realBrain.amITakingRightOperand = YES;
-
+- (BOOL)processDigit:(int)digit
+{
+    //self.brain.rightOperand = digit;
+    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+    self.brain.rightOperand = [self.brain.inputString doubleValue];
+    NSLog(@"input num = %d input sring = %@ right operand = %g", digit, self.brain.inputString, self.brain.rightOperand);
+    
+    
+    self.brain.state = self.brain.gettingRightOperandState;
+    self.brain.amITakingRightOperand = YES;
+    
     return YES;
 }
 
-- (BOOL)processOperator:(id)brain:(int)op
+- (BOOL)processOperator:(int)op
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-
-    realBrain.operatorString = op; // overwrite
+    self.operatorString = op; // overwrite
 
     return NO;
 }
 
-- (BOOL)processMemoryFunction:(id)brain:(int)func
+- (BOOL)processMemoryFunction:(int)func
 {
-    NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-
     if (memRecall == func) {
-        realBrain.rightOperand = realBrain.memoryStore;
+        self.brain.rightOperand = self.brain.memoryStore;
     }
 
-    realBrain.state = realBrain.gettingRightOperandState;
-    realBrain.amITakingRightOperand = YES;
+    self.brain.state = self.brain.gettingRightOperandState;
+    self.brain.amITakingRightOperand = YES;
 
     return YES;
 }

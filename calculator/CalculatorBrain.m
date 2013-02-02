@@ -15,14 +15,54 @@
 
 @implementation CalculatorBrain
 
+- (NSString *)inputString
+{
+    if (!_inputString) {
+        _inputString = [[NSString alloc] init];
+        NSLog(@"input string allocation");
+    }
+    return _inputString;
+}
+
+- (int)operatorString
+{
+    return self.gettingOperatorState.operatorString;
+}
+
+- (double)leftOperand
+{
+    return self.gettingLeftOperandState.operand;
+}
+
+- (double)rightOperand
+{
+    return self.gettingRightOperandState.operand;
+}
+
+- (void)setOperatorString:(int)op
+{
+    self.gettingOperatorState.operatorString = op;
+}
+
+- (void)setLeftOperand:(double)value
+{
+    self.gettingLeftOperandState.operand = value;
+}
+
+- (void)setRightOperand:(double)value
+{
+    self.gettingRightOperandState.operand = value;
+}
+
 - (void)initialize
 {
     if (!self.state) {
         NSLog(@"brain states created");
-        self.initialState = [[InitialState alloc] init];
-        self.gettingOperatorState = [[GettingOperatorState alloc] init];
-        self.gettingLeftOperandState = [[GettingLeftOperandState alloc] init];
-        self.gettingRightOperandState = [[GettingRightOperandState alloc] init];
+        
+        self.initialState = [InitialState brainStateOfBrain:self];
+        self.gettingOperatorState = [GettingOperatorState brainStateOfBrain:self];
+        self.gettingLeftOperandState = [GettingLeftOperandState brainStateOfBrain:self];
+        self.gettingRightOperandState = [GettingRightOperandState brainStateOfBrain:self];
     }
 
     NSLog(@"brain enters init state");
@@ -35,32 +75,39 @@
     self.leftOperand = self.rightOperand = 0;
     self.operatorString = invalid;
     self.state = self.initialState;
+    
+    self.inputString = nil;
 }
 
 - (void)processDigit:(int)digit
 {
-    [self.state processDigit:self:digit];
+    [self.state processDigit:digit];
 }
 
 - (void)processOperator:(int)op
 {
     if ([OperatorUtil isArithmeticOperator:op]) {
-        [self.state processOperator:self:op];
+        [self.state processOperator:op];
     } else if (memClear == op) { // mc
         self.memoryStore = 0;
     } else {
-        [self.state processMemoryFunction:self:op];       // mr, m-, m+
+        [self.state processMemoryFunction:op];       // mr, m-, m+
     }
 }
 
 - (void)processEnter
 {
-    [self.state processEnter:self];
+    [self.state processEnter];
 }
 
 - (void)processSign
 {
-    [self.state processSign:self];
+    [self.state processSign];
+}
+
+- (void)processDecimal
+{
+    [self.state processDecimal];
 }
 
 - (double)performOperation
@@ -75,6 +122,7 @@
         self.leftOperand /= self.rightOperand;
     } else {NSAssert(NO, @"not supported arithmetic operator"); }
 
+    
     return self.leftOperand;
 }
 

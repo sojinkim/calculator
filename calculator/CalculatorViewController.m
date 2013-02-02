@@ -90,7 +90,8 @@
 
 - (IBAction)decimalPressed:(UIButton *)sender
 {
-    NSLog(@"not implemented");
+    [self.brain processDecimal];
+    [self updateDisplay];
 }
 
 - (IBAction)signPressed:(UIButton *)sender
