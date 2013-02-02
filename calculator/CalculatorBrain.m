@@ -8,13 +8,23 @@
 
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
+#import "BrainState.h"
+#import "InitialState.h"
+#import "GettingOperatorState.h"
+#import "GettingLeftOperandState.h"
+#import "GettingRightOperandState.h"
 
 @interface CalculatorBrain ()
+@property (nonatomic) brainState currentState;
+@property (nonatomic) BrainState *state;
+@property (nonatomic, strong) InitialState *initialState;
+@property (nonatomic, strong) GettingOperatorState *gettingOperatorState;
+@property (nonatomic, strong) GettingLeftOperandState *gettingLeftOperandState;
+@property (nonatomic, strong) GettingRightOperandState *gettingRightOperandState;
 
 @end
 
-@implementation CalculatorBrain
-
+@implementation CalculatorBrain 
 - (NSString *)inputString
 {
     if (!_inputString) {
@@ -39,19 +49,30 @@
     return self.gettingRightOperandState.operand;
 }
 
-- (void)setOperatorString:(int)op
+- (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input
 {
-    self.gettingOperatorState.operatorString = op;
-}
-
-- (void)setLeftOperand:(double)value
-{
-    self.gettingLeftOperandState.operand = value;
-}
-
-- (void)setRightOperand:(double)value
-{
-    self.gettingRightOperandState.operand = value;
+    [self.state leave];
+    
+    switch (state) {
+        case brainState_init:
+            self.gettingLeftOperandState.operand = 0;
+            self.state = self.initialState;
+            break;
+        case brainState_left:
+            self.state = self.gettingLeftOperandState;
+            break;
+        case brainState_op:
+            self.state = self.gettingOperatorState;
+            break;
+        case brainState_right:
+            self.state = self.gettingRightOperandState;
+            break;
+        default:
+            NSAssert(NO, @"No such BrainState");    
+    }
+    
+    [self.state enterWith:value causedBy:input];
+    self.currentState = state;
 }
 
 - (void)initialize
@@ -66,17 +87,13 @@
     }
 
     NSLog(@"brain enters init state");
-    self.operatorString = -1;
+    self.currentState = brainState_init;
     self.state = self.initialState;
 }
 
 - (void)dropCurrentCalculation
 {
-    self.leftOperand = self.rightOperand = 0;
-    self.operatorString = invalid;
-    self.state = self.initialState;
-    
-    self.inputString = nil;
+    [self stateTransitionTo:brainState_init withInitialValue:0 causedBy:inputType_clear];
 }
 
 - (void)processDigit:(int)digit
@@ -112,18 +129,24 @@
 
 - (double)performOperation
 {
-    if (add == self.operatorString) {
-        self.leftOperand += self.rightOperand;
-    } else if (sub == self.operatorString) {
-        self.leftOperand -= self.rightOperand;
-    } else if (multiply == self.operatorString) {
-        self.leftOperand *= self.rightOperand;
-    } else if (divide == self.operatorString) {
-        self.leftOperand /= self.rightOperand;
-    } else {NSAssert(NO, @"not supported arithmetic operator"); }
-
+    double result = 0;
     
-    return self.leftOperand;
+    if (add == self.operatorString) {
+        result = self.leftOperand + self.rightOperand;
+    } else if (sub == self.operatorString) {
+        result = self.leftOperand - self.rightOperand;
+    } else if (multiply == self.operatorString) {
+        result = self.leftOperand * self.rightOperand;
+    } else if (divide == self.operatorString) {
+        result = self.leftOperand / self.rightOperand;
+    } else {NSAssert(NO, @"not supported arithmetic operator"); }
+    
+    return result;
+}
+
+- (brainState)getCurrentBrainState
+{
+    return self.currentState;
 }
 
 @end

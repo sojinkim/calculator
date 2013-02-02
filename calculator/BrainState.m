@@ -11,44 +11,38 @@
 
 @implementation BrainState
 
-- (void)enterWith:(int)digit
+- (void)enterWith:(double)initValue causedBy:(int)input
 {
-    return;
+    NSAssert(NO, @"please implement this");
 }
 
 - (void)leave
 {
-    return;
+    NSAssert(NO, @"please implement this");
 }
 
-- (BOOL)processDigit:(int)digit
+- (void)processDigit:(int)digit
 {
-    return NO;
 }
 
-- (BOOL)processOperator:(int)op
+- (void)processOperator:(int)op
 {
-    return NO;
 }
 
-- (BOOL)processEnter
+- (void)processEnter
 {
-    return NO;
 }
 
-- (BOOL)processSign
+- (void)processSign
 {
-    return NO;
 }
 
-- (BOOL)processDecimal
+- (void)processDecimal
 {
-    return NO;
 }
 
-- (BOOL)processMemoryFunction:(int)func
+- (void)processMemoryFunction:(int)func
 {
-    return NO;
 }
 
 @end

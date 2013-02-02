@@ -28,60 +28,60 @@
     return brainState;
 }
 
-- (BOOL)processDigit:(int)digit
+- (void)enterWith:(double)initValue causedBy:(int)input
+{
+    if (inputType_decimal == input) {
+        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"0."];
+    } else {
+        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%g", initValue];
+    }
+    self.operand = [self.brain.inputString doubleValue];
+    
+    NSLog(@"initial value = %g input string = %@ right operand = %g", initValue, self.brain.inputString, self.operand);
+}
+
+- (void)leave
+{
+    self.operand = 0;
+    self.brain.inputString = nil;
+    isDecimalPressed = NO;
+    isSignPressed = NO;
+}
+
+- (void)processDigit:(int)digit
 {
     self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
     self.operand = [self.brain.inputString doubleValue];
     
-    NSLog(@"input num = %d input sring = %@ right operand = %g", digit, self.brain.inputString, self.operand);
-
-    return NO;
+    NSLog(@"input num = %d input string = %@ right operand = %g", digit, self.brain.inputString, self.operand);
 }
 
-- (BOOL)processOperator:(int)op
+- (void)processOperator:(int)op
 {
     [self.brain performOperation];
-    self.operand = 0;
-    self.brain.operatorString = op;
-    self.brain.state = self.brain.gettingOperatorState;
-    self.brain.amITakingRightOperand = NO;
-
-    self.brain.inputString = nil;
-    isDecimalPressed = NO;
-    return YES;
+    [self.brain stateTransitionTo:brainState_op withInitialValue:op causedBy:inputType_operator];
 }
 
-- (BOOL)processEnter
+- (void)processEnter
 {
-    [self.brain performOperation];
-    self.operand = 0;
-    self.brain.operatorString = -1;
-    self.brain.state = self.brain.gettingLeftOperandState;
-    self.brain.amITakingRightOperand = NO;
-
-    self.brain.inputString = nil;
-    isDecimalPressed = NO;
-    return YES;
+    [self.brain stateTransitionTo:brainState_left withInitialValue:[self.brain performOperation] causedBy:inputType_enter];
 }
 
-- (BOOL)processSign
+- (void)processSign
 {
     self.operand *= -1;
-
-    return NO;
+    isSignPressed = (isSignPressed ? NO : YES);
 }
 
-- (BOOL)processDecimal
+- (void)processDecimal
 {
     if (!isDecimalPressed) {
         isDecimalPressed = YES;
         self.brain.inputString = [self.brain.inputString stringByAppendingString:@"."];
     }
-    
-    return NO;
 }
 
-- (BOOL)processMemoryFunction:(int)func
+- (void)processMemoryFunction:(int)func
 {
     if (memRecall == func) {
         self.operand = self.brain.memoryStore;
@@ -92,8 +92,6 @@
     } else {
         NSAssert(NO, @"not supported mem operator %d", func);
     }
-
-    return NO;
 }
 
 @end

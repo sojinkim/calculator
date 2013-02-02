@@ -25,37 +25,30 @@
     return brainState;
 }
 
-- (BOOL)processDigit:(int)digit
+- (void)enterWith:(double)initValue causedBy:(int)input
 {
-    //self.brain.rightOperand = digit;
-    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
-    self.brain.rightOperand = [self.brain.inputString doubleValue];
-    NSLog(@"input num = %d input sring = %@ right operand = %g", digit, self.brain.inputString, self.brain.rightOperand);
-    
-    
-    self.brain.state = self.brain.gettingRightOperandState;
-    self.brain.amITakingRightOperand = YES;
-    
-    return YES;
+    self.operatorString = (operatorType)initValue;
 }
 
-- (BOOL)processOperator:(int)op
+- (void)leave
+{
+}
+
+- (void)processDigit:(int)digit
+{
+    [self.brain stateTransitionTo:brainState_right withInitialValue:digit causedBy:inputType_digit];
+}
+
+- (void)processOperator:(int)op
 {
     self.operatorString = op; // overwrite
-
-    return NO;
 }
 
-- (BOOL)processMemoryFunction:(int)func
+- (void)processMemoryFunction:(int)func
 {
     if (memRecall == func) {
-        self.brain.rightOperand = self.brain.memoryStore;
+            [self.brain stateTransitionTo:brainState_right withInitialValue:self.brain.memoryStore causedBy:inputType_operator];
     }
-
-    self.brain.state = self.brain.gettingRightOperandState;
-    self.brain.amITakingRightOperand = YES;
-
-    return YES;
 }
 
 @end

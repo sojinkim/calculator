@@ -7,25 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BrainState.h"
-#import "InitialState.h"
-#import "GettingOperatorState.h"
-#import "GettingLeftOperandState.h"
-#import "GettingRightOperandState.h"
+
+typedef enum {
+    brainState_init, brainState_left, brainState_op, brainState_right
+} brainState;
+
+typedef enum {
+    inputType_digit, inputType_operator, inputType_enter, inputType_sign, inputType_decimal, inputType_clear
+} inputType;
 
 @interface CalculatorBrain : NSObject
-
 @property (nonatomic) double memoryStore;
 @property (nonatomic) NSString *inputString;
-
-@property (nonatomic) BOOL amITakingRightOperand; // ...
-
-// hold brain states
-@property (nonatomic) BrainState *state;
-@property (nonatomic) InitialState *initialState;
-@property (nonatomic) GettingOperatorState *gettingOperatorState;
-@property (nonatomic) GettingLeftOperandState *gettingLeftOperandState;
-@property (nonatomic) GettingRightOperandState *gettingRightOperandState;
 
 - (void)initialize;
 - (void)dropCurrentCalculation;
@@ -36,14 +29,13 @@
 - (void)processSign;
 - (void)processDecimal;
 
-- (void)setState:(BrainState *)state;
 - (double)performOperation;  // returns result
 
 - (int)operatorString;
 - (double)leftOperand;
 - (double)rightOperand;
-- (void)setOperatorString:(int)op;
-- (void)setLeftOperand:(double)value;
-- (void)setRightOperand:(double)value;
 
+- (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input;
+
+- (brainState)getCurrentBrainState;
 @end

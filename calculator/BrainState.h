@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 
 @interface BrainState : NSObject
-- (void)enterWith:(int)initValue;
+
+- (void)enterWith:(double)initValue causedBy:(int)input;
 - (void)leave;
 
-// returns yes when state changes for no reason
-- (BOOL)processDigit:(int)digit;
-- (BOOL)processOperator:(int)op;
-- (BOOL)processEnter;
-- (BOOL)processSign;
-- (BOOL)processDecimal;
+- (void)processDigit:(int)digit;
+- (void)processOperator:(int)op;
+- (void)processEnter;
+- (void)processSign;
+- (void)processDecimal;
 
-- (BOOL)processMemoryFunction:(int)func;
+- (void)processMemoryFunction:(int)func;
 
 @end

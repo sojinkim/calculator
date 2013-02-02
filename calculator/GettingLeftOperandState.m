@@ -28,44 +28,53 @@ BOOL isSignPressed;
     return brainState;
 }
 
-- (BOOL)processDigit:(int)digit
+- (void)enterWith:(double)initValue causedBy:(int)input
+{
+    if (inputType_decimal == input) {
+        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"0."];
+    } else {
+        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%g", initValue];
+    }
+    self.operand = [self.brain.inputString doubleValue];
+    
+    NSLog(@"initial value = %g input string = %@ left operand = %g", initValue, self.brain.inputString, self.operand);
+}
+
+- (void)leave
+{
+    self.brain.inputString = nil;
+    isDecimalPressed = NO;
+    isSignPressed = NO;
+}
+
+- (void)processDigit:(int)digit
 {
     self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
     self.operand = [self.brain.inputString doubleValue];
 
-    NSLog(@"input num = %d input sring = %@ left operand = %g", digit, self.brain.inputString, self.operand);
-    
-    return NO;
+    NSLog(@"input num = %d input string = %@ left operand = %g", digit, self.brain.inputString, self.operand);
 }
 
-- (BOOL)processOperator:(int)op
+- (void)processOperator:(int)op
 {
-    self.brain.operatorString = op;
-    self.brain.state = self.brain.gettingOperatorState;
-
-    self.brain.inputString = nil;
-    isDecimalPressed = NO;
-    return YES;
+    [self.brain stateTransitionTo:brainState_op withInitialValue:op causedBy:inputType_operator];
 }
 
-- (BOOL)processSign
+- (void)processSign
 {
     self.operand *= -1;
-
-    return NO;
+    isSignPressed = (isSignPressed ? NO : YES);
 }
 
-- (BOOL)processDecimal
+- (void)processDecimal
 {
     if (!isDecimalPressed) {
         isDecimalPressed = YES;
         self.brain.inputString = [self.brain.inputString stringByAppendingString:@"."];
     }
-    
-    return NO;
 }
 
-- (BOOL)processMemoryFunction:(int)func
+- (void)processMemoryFunction:(int)func
 {
     if (memRecall == func) {
         self.operand = self.brain.memoryStore;
@@ -76,8 +85,6 @@ BOOL isSignPressed;
     } else {
         NSAssert(NO, @"not supported mem operator %d", func);
     }
-
-    return NO;
 }
 
 @end
