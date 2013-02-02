@@ -11,13 +11,10 @@
 @interface BrainState : NSObject
 
 // returns yes when state changes for no reason
-- (BOOL)processDigit :(id)brain :(int)digit;
-- (BOOL)processOperator : (id)brain :(int)op;
-- (BOOL)processEnter :(id)brain;
-- (BOOL)processSign : (id)brain;
-- (BOOL)processMemoryFunction : (id)brain :(int)func;
- 
+- (BOOL)processDigit:(id)brain:(int)digit;
+- (BOOL)processOperator:(id)brain:(int)op;
+- (BOOL)processEnter:(id)brain;
+- (BOOL)processSign:(id)brain;
+- (BOOL)processMemoryFunction:(id)brain:(int)func;
+
 @end
-
-
-

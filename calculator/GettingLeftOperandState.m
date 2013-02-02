@@ -10,26 +10,26 @@
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
 
-
 @implementation GettingLeftOperandState
-- (BOOL)processDigit :(id)brain :(int)digit
+
+- (BOOL)processDigit:(id)brain:(int)digit
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
-    realBrain.leftOperand = realBrain.leftOperand*10 + digit;
-    
+
+    realBrain.leftOperand = realBrain.leftOperand * 10 + digit;
+
     return NO;
 }
 
-- (BOOL)processOperator :(id)brain :(int)op
+- (BOOL)processOperator:(id)brain:(int)op
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
+
     realBrain.operatorString = op;
     realBrain.state = realBrain.gettingOperatorState;
-    
+
     return YES;
 }
 
@@ -37,29 +37,28 @@
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
+
     realBrain.leftOperand *= -1;
-    
+
     return NO;
 }
 
-- (BOOL)processMemoryFunction : (id)brain :(int)func
+- (BOOL)processMemoryFunction:(id)brain:(int)func
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
-    if (memRecall == func) 
+
+    if (memRecall == func) {
         realBrain.leftOperand = realBrain.memoryStore;
-    
-    else if (memSub == func) 
+    } else if (memSub == func) {
         realBrain.memoryStore -= realBrain.leftOperand;
-    
-    else if (memAdd == func)
+    } else if (memAdd == func) {
         realBrain.memoryStore += realBrain.leftOperand;
-    
-    else
+    } else {
         NSAssert(NO, @"not supported mem operator %d", func);
-    
+    }
+
     return NO;
 }
+
 @end

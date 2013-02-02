@@ -14,7 +14,7 @@
 #import "GettingRightOperandState.h"
 
 @interface CalculatorBrain : NSObject
-// hold user input and math result
+                             // hold user input and math result
 @property (nonatomic) double leftOperand;
 @property (nonatomic) double rightOperand;
 @property (nonatomic) int operatorString;
@@ -29,7 +29,6 @@
 @property (nonatomic) GettingLeftOperandState *gettingLeftOperandState;
 @property (nonatomic) GettingRightOperandState *gettingRightOperandState;
 
-
 - (void)initialize;
 - (void)dropCurrentCalculation;
 
@@ -41,6 +40,4 @@
 - (void)setState:(BrainState *)state;
 - (double)performOperation;  // returns result
 
-
 @end
-

@@ -12,14 +12,16 @@
 
 + (BOOL)isArithmeticOperator:(operatorType)op
 {
-    if ((op < 4) & (op >= 0)) return YES;
-    else return NO;
+    if ((op < 4) & (op >= 0)) {
+        return YES;
+    } else {return NO; }
 }
 
 + (BOOL)isMemoryOperator:(operatorType)op
 {
-    if ((op >= 4) & (op < 8)) return YES;
-    else return NO;
+    if ((op >= 4) & (op < 8)) {
+        return YES;
+    } else {return NO; }
 }
 
 @end

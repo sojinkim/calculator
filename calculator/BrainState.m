@@ -11,12 +11,12 @@
 
 @implementation BrainState
 
-- (BOOL)processDigit :(id)brain :(int)digit
+- (BOOL)processDigit:(id)brain:(int)digit
 {
     return NO;
 }
 
-- (BOOL)processOperator :(id)brain :(int)op
+- (BOOL)processOperator:(id)brain:(int)op
 {
     return NO;
 }
@@ -31,22 +31,9 @@
     return NO;
 }
 
-- (BOOL)processMemoryFunction : (id)brain :(int)func
+- (BOOL)processMemoryFunction:(id)brain:(int)func
 {
     return NO;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
