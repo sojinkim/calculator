@@ -11,28 +11,27 @@
 #import "OperatorUtil.h"
 
 @implementation InitialState
-- (BOOL)processDigit :(id)brain :(int)digit
+- (BOOL)processDigit:(id)brain:(int)digit
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
+
     realBrain.leftOperand = digit;
     realBrain.state = realBrain.gettingLeftOperandState;
-    
+
     return YES;
 }
 
-- (BOOL)processMemoryFunction : (id)brain :(int)func
+- (BOOL)processMemoryFunction:(id)brain:(int)func
 {
     NSAssert([brain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
     CalculatorBrain *realBrain = (CalculatorBrain *)brain;
-    
-    if (memRecall == func) 
-    {
+
+    if (memRecall == func) {
         realBrain.leftOperand = realBrain.memoryStore;
         realBrain.state = realBrain.gettingLeftOperandState;
         return YES;
-    }
-    else return NO;
+    } else {return NO; }
 }
+
 @end

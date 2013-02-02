@@ -68,12 +68,13 @@
         _brain = [[CalculatorBrain alloc] init];
         [_brain initialize];
     }
+
     return _brain;
 }
 
-- (void) updateDisplay
+- (void)updateDisplay
 {
-    self.resultLabel.text = [NSString stringWithFormat:@"%g",(self.brain.amITakingRightOperand?self.brain.rightOperand:self.brain.leftOperand)];
+    self.resultLabel.text = [NSString stringWithFormat:@"%g", (self.brain.amITakingRightOperand ? self.brain.rightOperand : self.brain.leftOperand)];
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender
@@ -81,35 +82,39 @@
     NSLog(@"Button pressed:%@", sender.currentTitle);
 }
 
-- (IBAction)digitPressed:(UIButton *)sender {
+- (IBAction)digitPressed:(UIButton *)sender
+{
     [self.brain processDigit:[sender tag]];
     [self updateDisplay];
 }
 
-- (IBAction)decimalPressed:(UIButton *)sender {
+- (IBAction)decimalPressed:(UIButton *)sender
+{
     NSLog(@"not implemented");
 }
 
-- (IBAction)signPressed:(UIButton *)sender {
+- (IBAction)signPressed:(UIButton *)sender
+{
     [self.brain processSign];
     [self updateDisplay];
 }
 
-- (IBAction)clearPressed:(UIButton *)sender {
+- (IBAction)clearPressed:(UIButton *)sender
+{
     [self.brain dropCurrentCalculation];
     [self updateDisplay];
 }
 
-- (IBAction)enterPressed:(UIButton *)sender {
+- (IBAction)enterPressed:(UIButton *)sender
+{
     [self.brain processEnter];
     [self updateDisplay];
 }
 
-- (IBAction)operatorPressed:(UIButton *)sender {
+- (IBAction)operatorPressed:(UIButton *)sender
+{
     [self.brain processOperator:[sender tag]];
     [self updateDisplay];
 }
-
-
 
 @end

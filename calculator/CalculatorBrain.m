@@ -24,7 +24,7 @@
         self.gettingLeftOperandState = [[GettingLeftOperandState alloc] init];
         self.gettingRightOperandState = [[GettingRightOperandState alloc] init];
     }
-    
+
     NSLog(@"brain enters init state");
     self.operatorString = -1;
     self.state = self.initialState;
@@ -44,13 +44,13 @@
 
 - (void)processOperator:(int)op
 {
-    if ( [OperatorUtil isArithmeticOperator:op] )
+    if ([OperatorUtil isArithmeticOperator:op]) {
         [self.state processOperator:self:op];
-    
-    else if (memClear == op) // mc
-            self.memoryStore = 0;
-    else
-            [self.state processMemoryFunction:self :op];  // mr, m-, m+
+    } else if (memClear == op) { // mc
+        self.memoryStore = 0;
+    } else {
+        [self.state processMemoryFunction:self:op];       // mr, m-, m+
+    }
 }
 
 - (void)processEnter
@@ -65,25 +65,17 @@
 
 - (double)performOperation
 {
-    if (add == self.operatorString) 
+    if (add == self.operatorString) {
         self.leftOperand += self.rightOperand;
-    
-    else if (sub == self.operatorString) 
+    } else if (sub == self.operatorString) {
         self.leftOperand -= self.rightOperand;
-    
-    else if (multiply == self.operatorString) 
+    } else if (multiply == self.operatorString) {
         self.leftOperand *= self.rightOperand;
-    
-    else if (divide == self.operatorString) 
+    } else if (divide == self.operatorString) {
         self.leftOperand /= self.rightOperand;
-    
-    else NSAssert(NO, @"not supported arithmetic operator");
-    
+    } else {NSAssert(NO, @"not supported arithmetic operator"); }
+
     return self.leftOperand;
 }
 
-
 @end
-
-
-

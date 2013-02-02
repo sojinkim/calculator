@@ -108,25 +108,9 @@
 		5582029016B815E2007522B4 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				5591D4D516B9828600CD32EF /* BrainState.h */,
-				55271F6516BAA7D2007F6428 /* GettingRightOperandState.h */,
-				55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */,
-				55271F6216BAA723007F6428 /* GettingLeftOperandState.h */,
-				55271F6316BAA723007F6428 /* GettingLeftOperandState.m */,
-				55271F5F16BAA6C5007F6428 /* GettingOperatorState.h */,
-				55271F6016BAA6C5007F6428 /* GettingOperatorState.m */,
-				55271F5C16BAA62A007F6428 /* InitialState.h */,
-				55271F5D16BAA62A007F6428 /* InitialState.m */,
-				5591D4D616B9828600CD32EF /* BrainState.m */,
-				5591D4D716B9828600CD32EF /* CalculatorBrain.h */,
-				5591D4D816B9828600CD32EF /* CalculatorBrain.m */,
-				5582029916B815E2007522B4 /* CalculatorAppDelegate.h */,
-				5582029A16B815E2007522B4 /* CalculatorAppDelegate.m */,
-				558202A216B815E2007522B4 /* MainStoryboard.storyboard */,
-				558202A516B815E2007522B4 /* CalculatorViewController.h */,
-				55271F6816BAB1BE007F6428 /* OperatorUtil.h */,
-				55271F6916BAB1BE007F6428 /* OperatorUtil.m */,
-				558202A616B815E2007522B4 /* CalculatorViewController.m */,
+				9FC5D26916BCB67100DF08E4 /* Model */,
+				9FC5D26C16BCB6AD00DF08E4 /* View */,
+				9FC5D26B16BCB67E00DF08E4 /* Controller */,
 				9FF6754116B8FAB700C2B233 /* assets */,
 				5582029116B815E2007522B4 /* Supporting Files */,
 			);
@@ -145,6 +129,46 @@
 				558202A016B815E2007522B4 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FC5D26916BCB67100DF08E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5591D4D516B9828600CD32EF /* BrainState.h */,
+				5591D4D616B9828600CD32EF /* BrainState.m */,
+				5591D4D716B9828600CD32EF /* CalculatorBrain.h */,
+				5591D4D816B9828600CD32EF /* CalculatorBrain.m */,
+				55271F6216BAA723007F6428 /* GettingLeftOperandState.h */,
+				55271F6316BAA723007F6428 /* GettingLeftOperandState.m */,
+				55271F5F16BAA6C5007F6428 /* GettingOperatorState.h */,
+				55271F6016BAA6C5007F6428 /* GettingOperatorState.m */,
+				55271F6516BAA7D2007F6428 /* GettingRightOperandState.h */,
+				55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */,
+				55271F5C16BAA62A007F6428 /* InitialState.h */,
+				55271F5D16BAA62A007F6428 /* InitialState.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9FC5D26B16BCB67E00DF08E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5582029916B815E2007522B4 /* CalculatorAppDelegate.h */,
+				5582029A16B815E2007522B4 /* CalculatorAppDelegate.m */,
+				558202A516B815E2007522B4 /* CalculatorViewController.h */,
+				558202A616B815E2007522B4 /* CalculatorViewController.m */,
+				55271F6816BAB1BE007F6428 /* OperatorUtil.h */,
+				55271F6916BAB1BE007F6428 /* OperatorUtil.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9FC5D26C16BCB6AD00DF08E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				558202A216B815E2007522B4 /* MainStoryboard.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		9FF6754116B8FAB700C2B233 /* assets */ = {
