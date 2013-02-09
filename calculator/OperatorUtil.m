@@ -24,4 +24,19 @@
     } else {return NO; }
 }
 
++ (NSString *)stringValue:(operatorType)type
+{
+    switch (type) {
+        case add:
+            return @"+";
+        case sub:
+            return @"-";
+        case multiply:
+            return @"x";
+        case divide:
+            return @"÷";
+        default:
+            return @"invalid";
+    }
+}
 @end

@@ -7,11 +7,12 @@
 //
 
 #import "BrainState.h"
+#import "OperatorUtil.h"
 
 @class CalculatorBrain;
 
 @interface GettingOperatorState : BrainState
-@property (nonatomic) int operatorString;
+@property (nonatomic) operatorType operatorString;
 
 + (GettingOperatorState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

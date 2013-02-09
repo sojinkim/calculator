@@ -8,7 +8,7 @@
 
 #import "GettingOperatorState.h"
 #import "CalculatorBrain.h"
-#import "OperatorUtil.h"
+
 
 @interface GettingOperatorState()
 @property (nonatomic, weak) CalculatorBrain *brain;
@@ -20,6 +20,7 @@
 {
     GettingOperatorState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
+    brainState.operatorString = invalid;
     return brainState;
 }
 

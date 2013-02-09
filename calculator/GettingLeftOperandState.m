@@ -34,8 +34,6 @@ BOOL isSignPressed;
         self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%g", initValue];
     }
     self.operand = [self.brain.inputString doubleValue];
-    
-    NSLog(@"initial value = %g input string = %@ left operand = %g", initValue, self.brain.inputString, self.operand);
 }
 
 - (void)leave
@@ -54,8 +52,6 @@ BOOL isSignPressed;
 {
     self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
     self.operand = [self.brain.inputString doubleValue];
-
-    NSLog(@"input num = %d input string = %@ left operand = %g", digit, self.brain.inputString, self.operand);
 }
 
 - (void)processOperator:(int)op

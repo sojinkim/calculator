@@ -16,5 +16,6 @@ typedef enum {
 
 + (BOOL)isArithmeticOperator:(operatorType)op;
 + (BOOL)isMemoryOperator:(operatorType)op;
++ (NSString *)stringValue:(operatorType)type;
 
 @end

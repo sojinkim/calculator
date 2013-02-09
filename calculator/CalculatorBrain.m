@@ -7,7 +7,6 @@
 //
 
 #import "CalculatorBrain.h"
-#import "OperatorUtil.h"
 #import "InitialState.h"
 #import "GettingOperatorState.h"
 #import "GettingLeftOperandState.h"
@@ -32,7 +31,7 @@
     return _inputString;
 }
 
-- (int)operatorString
+- (operatorType)operatorString
 {
     return self.gettingOperatorState.operatorString;
 }

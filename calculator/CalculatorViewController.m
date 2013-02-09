@@ -8,12 +8,14 @@
 
 #import "CalculatorViewController.h"
 #import "CalculatorBrain.h"
+#import "OperatorUtil.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface CalculatorViewController ()
 
 @property (nonatomic, weak) IBOutlet UIView *resultContainer;
 @property (nonatomic, weak) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *equationLabel;
 
 @property (nonatomic, weak) IBOutlet UIButton *buttonMc;
 @property (nonatomic, weak) IBOutlet UIButton *buttonMplus;
@@ -74,7 +76,21 @@
 
 - (void)updateDisplay
 {
-    self.resultLabel.text = [NSString stringWithFormat:@"%g", ((brainState_right == self.brain.currentState) ? self.brain.rightOperand : self.brain.leftOperand)];
+    NSLog(@"%d : %g %@ %g", self.brain.currentState, self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString], self.brain.rightOperand);
+    
+    if (brainState_op == self.brain.currentState) {
+        self.resultLabel.text = @"0";
+    }
+    else {
+        self.resultLabel.text = [NSString stringWithFormat:@"%g", ((brainState_right == self.brain.currentState) ? self.brain.rightOperand : self.brain.leftOperand)];
+    }
+    
+    if ((brainState_op == self.brain.currentState ) || (brainState_right == self.brain.currentState)) {
+        self.equationLabel.text = [NSString stringWithFormat:@"%g %@ ", self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString]];
+    }
+    else {
+        self.equationLabel.text = nil;
+    }
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender

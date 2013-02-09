@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -17,19 +17,30 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="NPu-Jc-ZVG" userLabel="Result Label">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="264" id="H7D-62-5xx"/>
-                                            <constraint firstAttribute="height" constant="72" id="mPM-rE-Xa4"/>
+                                            <constraint firstAttribute="height" constant="60" id="cJN-2z-T2i"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="42"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLC-Bf-MJx">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="264" id="DiV-lo-CDI"/>
+                                            <constraint firstAttribute="height" constant="22" id="mGS-Uh-0je"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="NPu-Jc-ZVG" firstAttribute="centerX" secondItem="cQi-gG-1fe" secondAttribute="centerX" type="default" id="hmV-Gd-R5i"/>
-                                    <constraint firstItem="NPu-Jc-ZVG" firstAttribute="centerY" secondItem="cQi-gG-1fe" secondAttribute="centerY" type="default" id="m2A-Hy-cVO"/>
+                                    <constraint firstItem="JLC-Bf-MJx" firstAttribute="trailing" secondItem="NPu-Jc-ZVG" secondAttribute="trailing" type="default" id="6Cl-Fw-dbd"/>
+                                    <constraint firstItem="NPu-Jc-ZVG" firstAttribute="top" secondItem="cQi-gG-1fe" secondAttribute="top" constant="20" symbolic="YES" type="default" id="L0n-jG-Vap"/>
+                                    <constraint firstItem="JLC-Bf-MJx" firstAttribute="top" secondItem="cQi-gG-1fe" secondAttribute="top" constant="6" id="ScA-Gb-nCW"/>
+                                    <constraint firstItem="JLC-Bf-MJx" firstAttribute="centerX" secondItem="cQi-gG-1fe" secondAttribute="centerX" type="default" id="gfz-Ui-I0l"/>
                                     <constraint firstAttribute="height" constant="88" type="user" id="oGs-aQ-qOE"/>
+                                    <constraint firstItem="NPu-Jc-ZVG" firstAttribute="leading" secondItem="JLC-Bf-MJx" secondAttribute="leading" type="default" id="rOE-jM-nQm"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
@@ -641,6 +652,7 @@
                         <outlet property="buttonMultiply" destination="bYV-hf-rCo" id="3ww-Qf-aH9"/>
                         <outlet property="buttonSign" destination="voS-6k-Pac" id="vUo-JN-r8g"/>
                         <outlet property="buttonSubtract" destination="gLr-FV-ez4" id="Kba-Dk-j6k"/>
+                        <outlet property="equationLabel" destination="JLC-Bf-MJx" id="OXh-Lj-8ZC"/>
                         <outlet property="resultContainer" destination="cQi-gG-1fe" id="Gom-tq-zwz"/>
                         <outlet property="resultLabel" destination="NPu-Jc-ZVG" id="GDM-Pj-CwC"/>
                     </connections>
@@ -650,40 +662,6 @@
             <point key="canvasLocation" x="-130" y="7"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CalculatorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="button0" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button2" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button3" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button5" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button6" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button7" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button8" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="button9" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonAdd" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonC" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonDecimal" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonDivide" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonEquals" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMc" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMminus" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMplus" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMr" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonMultiply" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonSign" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="buttonSubtract" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="resultContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
