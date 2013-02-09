@@ -16,10 +16,8 @@
 
 @implementation GettingOperatorState
 
-+ (GettingOperatorState *)brainStateOfBrain:(id)myBrain
++ (GettingOperatorState *)brainStateOfBrain:(CalculatorBrain *)myBrain
 {
-    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    
     GettingOperatorState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
     return brainState;

@@ -19,10 +19,8 @@ BOOL isSignPressed;
 
 @implementation GettingLeftOperandState
 
-+ (GettingLeftOperandState *)brainStateOfBrain:(id)myBrain
++ (GettingLeftOperandState *)brainStateOfBrain:(CalculatorBrain *)myBrain
 {
-    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    
     GettingLeftOperandState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
     return brainState;

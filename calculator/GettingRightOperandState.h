@@ -8,8 +8,10 @@
 
 #import "BrainState.h"
 
+@class CalculatorBrain;
+
 @interface GettingRightOperandState : BrainState
 @property (nonatomic) double operand;
 
-+ (GettingRightOperandState *)brainStateOfBrain:(id)myBrain;
++ (GettingRightOperandState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

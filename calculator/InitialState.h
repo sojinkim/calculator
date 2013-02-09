@@ -8,6 +8,8 @@
 
 #import "BrainState.h"
 
+@class CalculatorBrain;
+
 @interface InitialState : BrainState
-+ (InitialState *)brainStateOfBrain:(id)myBrain;
++ (InitialState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

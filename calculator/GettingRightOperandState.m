@@ -19,10 +19,8 @@
 
 @implementation GettingRightOperandState
 
-+ (GettingRightOperandState *)brainStateOfBrain:(id)myBrain
++ (GettingRightOperandState *)brainStateOfBrain:(CalculatorBrain *)myBrain
 {
-    NSAssert([myBrain isKindOfClass:[CalculatorBrain class]], @"this is not my brain");
-    
     GettingRightOperandState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
     return brainState;
