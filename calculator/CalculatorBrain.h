@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum {
-    brainState_init, brainState_left, brainState_op, brainState_right
-} brainState;
+#import "BrainState.h"
 
 typedef enum {
     inputType_digit, inputType_operator, inputType_enter, inputType_sign, inputType_decimal, inputType_clear
@@ -34,8 +31,8 @@ typedef enum {
 - (int)operatorString;
 - (double)leftOperand;
 - (double)rightOperand;
+- (brainState)currentState;
 
 - (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input;
 
-- (brainState)getCurrentBrainState;
 @end

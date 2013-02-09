@@ -8,14 +8,12 @@
 
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
-#import "BrainState.h"
 #import "InitialState.h"
 #import "GettingOperatorState.h"
 #import "GettingLeftOperandState.h"
 #import "GettingRightOperandState.h"
 
 @interface CalculatorBrain ()
-@property (nonatomic) brainState currentState;
 @property (nonatomic) BrainState *state;
 @property (nonatomic, strong) InitialState *initialState;
 @property (nonatomic, strong) GettingOperatorState *gettingOperatorState;
@@ -49,6 +47,11 @@
     return self.gettingRightOperandState.operand;
 }
 
+- (brainState)currentState
+{
+    return self.state.whoAmI;
+}
+
 - (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input
 {
     [self.state leave];
@@ -72,7 +75,6 @@
     }
     
     [self.state enterWith:value causedBy:input];
-    self.currentState = state;
 }
 
 - (void)initialize
@@ -87,7 +89,6 @@
     }
 
     NSLog(@"brain enters init state");
-    self.currentState = brainState_init;
     self.state = self.initialState;
 }
 
@@ -142,11 +143,6 @@
     } else {NSAssert(NO, @"not supported arithmetic operator"); }
     
     return result;
-}
-
-- (brainState)getCurrentBrainState
-{
-    return self.currentState;
 }
 
 @end

@@ -32,6 +32,11 @@
 {
 }
 
+- (brainState)whoAmI
+{
+    return brainState_op;
+}
+
 - (void)processDigit:(int)digit
 {
     [self.brain stateTransitionTo:brainState_right withInitialValue:digit causedBy:inputType_digit];

@@ -46,6 +46,11 @@
     isSignPressed = NO;
 }
 
+- (brainState)whoAmI
+{
+    return brainState_right;
+}
+
 - (void)processDigit:(int)digit
 {
     self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];

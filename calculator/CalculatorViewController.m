@@ -74,7 +74,7 @@
 
 - (void)updateDisplay
 {
-    self.resultLabel.text = [NSString stringWithFormat:@"%g", ((brainState_right == self.brain.getCurrentBrainState) ? self.brain.rightOperand : self.brain.leftOperand)];
+    self.resultLabel.text = [NSString stringWithFormat:@"%g", ((brainState_right == self.brain.currentState) ? self.brain.rightOperand : self.brain.leftOperand)];
 }
 
 - (IBAction)buttonPressed:(UIButton *)sender

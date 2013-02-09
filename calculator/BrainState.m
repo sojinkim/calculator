@@ -21,6 +21,12 @@
     NSAssert(NO, @"please implement this");
 }
 
+- (brainState)whoAmI
+{
+    NSAssert(NO, @"please implement this");
+    return brainState_init;
+}
+
 - (void)processDigit:(int)digit
 {
 }

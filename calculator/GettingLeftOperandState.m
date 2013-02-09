@@ -45,6 +45,11 @@ BOOL isSignPressed;
     isSignPressed = NO;
 }
 
+- (brainState)whoAmI
+{
+    return brainState_left;
+}
+
 - (void)processDigit:(int)digit
 {
     self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
