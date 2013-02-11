@@ -63,6 +63,12 @@ BOOL isSignPressed;
 {
     self.operand *= -1;
     isSignPressed = (isSignPressed ? NO : YES);
+    
+    if (isSignPressed) {
+        self.brain.inputString = [NSString stringWithFormat:@"-%@",self.brain.inputString];
+    } else {
+        self.brain.inputString = [self.brain.inputString substringFromIndex:1];
+    }
 }
 
 - (void)processDecimal
