@@ -97,6 +97,12 @@
 - (IBAction)buttonPressed:(UIButton *)sender
 {
     NSLog(@"Button pressed:%@", sender.currentTitle);
+    if ( (self.buttonMplus == sender) || (self.buttonMminus == sender) ) {
+        [self.buttonMr setBackgroundColor:[UIColor yellowColor]];
+    }
+    if ( self.buttonMc == sender ) {
+        [self.buttonMr setBackgroundColor:[UIColor whiteColor]];
+    }    
 }
 
 - (IBAction)digitPressed:(UIButton *)sender
