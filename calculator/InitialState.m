@@ -23,8 +23,12 @@
     return brainState;
 }
 
-- (void)enterWith:(double)initValue causedBy:(int)input
+- (void)enterWith:(double)initValue causedBy:(inputType)input
 {
+    self.calculationResult = initValue;
+    if ( [OperatorUtil isArithmeticOperator:[OperatorUtil operatorTypeFromInputType:input]] ) {
+        [self processOperator:[OperatorUtil operatorTypeFromInputType:input]];
+    }
 }
 
 - (void)leave
@@ -36,9 +40,21 @@
     return brainState_init;
 }
 
+- (void)processOperator:(operatorType)op
+{
+    inputType input = [OperatorUtil inputTypeFromOperatorType:op];
+    [self.brain stateTransitionTo:brainState_left withInitialValue:self.calculationResult causedBy:input];
+    [self.brain stateTransitionTo:brainState_op withInitialValue:op causedBy:input];
+}
+
 - (void)processDigit:(int)digit
 {
     [self.brain stateTransitionTo:brainState_left withInitialValue:digit causedBy:inputType_digit];
+}
+
+- (void)processSign
+{
+    [self.brain stateTransitionTo:brainState_left withInitialValue:(self.calculationResult*-1) causedBy:inputType_sign];
 }
 
 - (void)processDecimal
@@ -49,7 +65,13 @@
 - (void)processMemoryFunction:(int)func
 {
     if (memRecall == func) {
-        [self.brain stateTransitionTo:brainState_left withInitialValue:self.brain.memoryStore causedBy:inputType_operator];
+        [self.brain stateTransitionTo:brainState_left withInitialValue:self.brain.memoryStore causedBy:inputType_mem];
+    } else if (memSub == func) {
+        self.brain.memoryStore -= self.calculationResult;
+    } else if (memAdd == func) {
+        self.brain.memoryStore += self.calculationResult;
+    } else {
+        NSAssert(NO, @"not supported mem operator %d", func);
     }
 }
 

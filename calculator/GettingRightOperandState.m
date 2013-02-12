@@ -26,12 +26,13 @@
     return brainState;
 }
 
-- (void)enterWith:(double)initValue causedBy:(int)input
+- (void)enterWith:(double)initValue causedBy:(inputType)input
 {
     if (inputType_decimal == input) {
-        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"0."];
+        self.brain.inputString = @"0.";
+        isDecimalPressed = YES;
     } else {
-        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%g", initValue];
+        self.brain.inputString = [NSString stringWithFormat:@"%g", initValue];
     }
     self.operand = [self.brain.inputString doubleValue];
 }
@@ -39,7 +40,7 @@
 - (void)leave
 {
     self.operand = 0;
-    self.brain.inputString = nil;
+    self.brain.inputString = @"0";
     isDecimalPressed = NO;
     isSignPressed = NO;
 }
@@ -51,26 +52,29 @@
 
 - (void)processDigit:(int)digit
 {
-    self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+    if ( [self.brain.inputString isEqualToString:@"0"] ) {  // mr case
+        self.brain.inputString = [NSString stringWithFormat:@"%d", digit];
+    } else {
+        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+    }
     self.operand = [self.brain.inputString doubleValue];
 }
 
-- (void)processOperator:(int)op
+- (void)processOperator:(operatorType)op
 {
-    [self.brain performOperation];
-    [self processEnter];
-    [self.brain stateTransitionTo:brainState_op withInitialValue:op causedBy:inputType_operator];
+    inputType input = [OperatorUtil inputTypeFromOperatorType:op];
+    [self.brain stateTransitionTo:brainState_init withInitialValue:[self.brain performOperation] causedBy:input];
 }
 
 - (void)processEnter
 {
-    [self.brain stateTransitionTo:brainState_left withInitialValue:[self.brain performOperation] causedBy:inputType_enter];
+    [self.brain stateTransitionTo:brainState_init withInitialValue:[self.brain performOperation] causedBy:inputType_enter];
 }
 
 - (void)processSign
 {
     self.operand *= -1;
-    isSignPressed = (isSignPressed ? NO : YES);
+    isSignPressed = (self.operand < -1 ? YES : NO);
     
     if (isSignPressed) {
         self.brain.inputString = [NSString stringWithFormat:@"-%@",self.brain.inputString];
@@ -91,6 +95,8 @@
 {
     if (memRecall == func) {
         self.operand = self.brain.memoryStore;
+        self.brain.inputString = [NSString stringWithFormat:@"%g", self.operand];
+        isDecimalPressed = NO;
     } else if (memSub == func) {
         self.brain.memoryStore -= self.operand;
     } else if (memAdd == func) {

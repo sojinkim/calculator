@@ -12,7 +12,7 @@
 #import "GettingLeftOperandState.h"
 #import "GettingRightOperandState.h"
 
-@interface CalculatorBrain ()
+@interface CalculatorBrain () 
 @property (nonatomic) BrainState *state;
 @property (nonatomic, strong) InitialState *initialState;
 @property (nonatomic, strong) GettingOperatorState *gettingOperatorState;
@@ -44,6 +44,11 @@
 - (double)rightOperand
 {
     return self.gettingRightOperandState.operand;
+}
+
+- (double)calculationResult
+{
+    return self.initialState.calculationResult;
 }
 
 - (brainState)currentState
@@ -79,16 +84,14 @@
 - (void)initialize
 {
     if (!self.state) {
-        NSLog(@"brain states created");
-        
         self.initialState = [InitialState brainStateOfBrain:self];
         self.gettingOperatorState = [GettingOperatorState brainStateOfBrain:self];
         self.gettingLeftOperandState = [GettingLeftOperandState brainStateOfBrain:self];
         self.gettingRightOperandState = [GettingRightOperandState brainStateOfBrain:self];
     }
 
-    NSLog(@"brain enters init state");
     self.state = self.initialState;
+    self.inputString = @"0";
 }
 
 - (void)dropCurrentCalculation
@@ -98,6 +101,9 @@
 
 - (void)processDigit:(int)digit
 {
+    if ( [self.inputString isEqualToString:@"0"] && (0 == digit) ) {
+        return;
+    }
     [self.state processDigit:digit];
 }
 
@@ -129,7 +135,7 @@
 
 - (double)performOperation
 {
-    double result = 0;
+    double result = 0.0f;
     
     if (add == self.operatorString) {
         result = self.leftOperand + self.rightOperand;

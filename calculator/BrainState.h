@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OperatorUtil.h"
 
 typedef enum {
     brainState_init, brainState_left, brainState_op, brainState_right
@@ -14,12 +15,12 @@ typedef enum {
 
 @interface BrainState : NSObject
 
-- (void)enterWith:(double)initValue causedBy:(int)input;
+- (void)enterWith:(double)initValue causedBy:(inputType)input;
 - (void)leave;
 - (brainState)whoAmI;
 
 - (void)processDigit:(int)digit;
-- (void)processOperator:(int)op;
+- (void)processOperator:(operatorType)op;
 - (void)processEnter;
 - (void)processSign;
 - (void)processDecimal;

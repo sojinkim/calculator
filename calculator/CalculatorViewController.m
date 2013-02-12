@@ -76,15 +76,16 @@
 
 - (void)updateDisplay
 {
-    NSLog(@"%d : %g %@ %g", self.brain.currentState, self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString], self.brain.rightOperand);
+    NSLog(@"state%d : %g %@ %g, inputstring=%@", self.brain.currentState, self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString], self.brain.rightOperand, self.brain.inputString);
     
-    if (brainState_op == self.brain.currentState) {
-        self.resultLabel.text = @"0";
-    }
-    else {
-        self.resultLabel.text = [NSString stringWithFormat:@"%g", ((brainState_right == self.brain.currentState) ? self.brain.rightOperand : self.brain.leftOperand)];
+    
+    if (brainState_init == self.brain.currentState) {   // display result
+        self.resultLabel.text = [NSString stringWithFormat:@"%g", self.brain.calculationResult];
+    } else {   // or display user input
+        self.resultLabel.text = self.brain.inputString;
     }
     
+    // display equation
     if ((brainState_op == self.brain.currentState ) || (brainState_right == self.brain.currentState)) {
         self.equationLabel.text = [NSString stringWithFormat:@"%g %@ ", self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString]];
     }

@@ -7,11 +7,10 @@
 //
 
 #import "BrainState.h"
-#import "CalculatorBrain.h"
 
 @implementation BrainState
 
-- (void)enterWith:(double)initValue causedBy:(int)input
+- (void)enterWith:(double)initValue causedBy:(inputType)input
 {
     NSAssert(NO, @"please implement this");
 }
@@ -31,7 +30,7 @@
 {
 }
 
-- (void)processOperator:(int)op
+- (void)processOperator:(operatorType)op
 {
 }
 
