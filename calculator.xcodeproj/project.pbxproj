@@ -25,13 +25,20 @@
 		558202A716B815E2007522B4 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 558202A616B815E2007522B4 /* CalculatorViewController.m */; };
 		5591D4D916B9828600CD32EF /* BrainState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5591D4D616B9828600CD32EF /* BrainState.m */; };
 		5591D4DA16B9828600CD32EF /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5591D4D816B9828600CD32EF /* CalculatorBrain.m */; };
+		55A1F90016CBEB10005EC82F /* CalculatorBrainSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1F8FF16CBEB10005EC82F /* CalculatorBrainSpec.m */; };
 		55B2892416C689290086B8F1 /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B2892216C689290086B8F1 /* calculator.png */; };
 		55B2892516C689290086B8F1 /* calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B2892316C689290086B8F1 /* calculator@2x.png */; };
+		55E1450E16CBE2FE00234259 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E1450D16CBE2FE00234259 /* SenTestingKit.framework */; };
+		55E1450F16CBE2FE00234259 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028A16B815E2007522B4 /* UIKit.framework */; };
+		55E1451016CBE2FE00234259 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028C16B815E2007522B4 /* Foundation.framework */; };
+		55E1451616CBE2FF00234259 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55E1451416CBE2FF00234259 /* InfoPlist.strings */; };
+		62D6C020B60B4C2E8577BA97 /* libPods-KiwiUnitTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A541D942ED5A4F488B232E53 /* libPods-KiwiUnitTest.a */; };
 		9FF6754416B8FBBE00C2B233 /* Pattern - Gingham.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */; };
 		9FF6754516B8FBBE00C2B233 /* Pattern - Gingham@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EE0C6E35C7745DD8C7F91B5 /* Pods-KiwiUnitTest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KiwiUnitTest.xcconfig"; path = "Pods/Pods-KiwiUnitTest.xcconfig"; sourceTree = SOURCE_ROOT; };
 		55271F5C16BAA62A007F6428 /* InitialState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialState.h; sourceTree = "<group>"; };
 		55271F5D16BAA62A007F6428 /* InitialState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialState.m; sourceTree = "<group>"; };
 		55271F5F16BAA6C5007F6428 /* GettingOperatorState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GettingOperatorState.h; sourceTree = "<group>"; };
@@ -62,10 +69,17 @@
 		5591D4D616B9828600CD32EF /* BrainState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrainState.m; sourceTree = "<group>"; };
 		5591D4D716B9828600CD32EF /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
 		5591D4D816B9828600CD32EF /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
+		55A1F8FF16CBEB10005EC82F /* CalculatorBrainSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrainSpec.m; sourceTree = "<group>"; };
 		55B2892216C689290086B8F1 /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
 		55B2892316C689290086B8F1 /* calculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calculator@2x.png"; sourceTree = "<group>"; };
+		55E1450C16CBE2FE00234259 /* KiwiUnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiUnitTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E1450D16CBE2FE00234259 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		55E1451316CBE2FF00234259 /* KiwiUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KiwiUnitTest-Info.plist"; sourceTree = "<group>"; };
+		55E1451516CBE2FF00234259 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		55E1451A16CBE2FF00234259 /* KiwiUnitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KiwiUnitTest-Prefix.pch"; sourceTree = "<group>"; };
 		9FF6754216B8FBBE00C2B233 /* Pattern - Gingham.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham.png"; sourceTree = "<group>"; };
 		9FF6754316B8FBBE00C2B233 /* Pattern - Gingham@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pattern - Gingham@2x.png"; sourceTree = "<group>"; };
+		A541D942ED5A4F488B232E53 /* libPods-KiwiUnitTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KiwiUnitTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55E1450816CBE2FE00234259 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E1450E16CBE2FE00234259 /* SenTestingKit.framework in Frameworks */,
+				55E1450F16CBE2FE00234259 /* UIKit.framework in Frameworks */,
+				55E1451016CBE2FE00234259 /* Foundation.framework in Frameworks */,
+				62D6C020B60B4C2E8577BA97 /* libPods-KiwiUnitTest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -86,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				5582029016B815E2007522B4 /* calculator */,
+				55E1451116CBE2FE00234259 /* KiwiUnitTest */,
 				5582028916B815E2007522B4 /* Frameworks */,
 				5582028816B815E2007522B4 /* Products */,
+				1EE0C6E35C7745DD8C7F91B5 /* Pods-KiwiUnitTest.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				5582028716B815E2007522B4 /* calculator.app */,
+				55E1450C16CBE2FE00234259 /* KiwiUnitTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +133,8 @@
 				5582028A16B815E2007522B4 /* UIKit.framework */,
 				5582028C16B815E2007522B4 /* Foundation.framework */,
 				5582028E16B815E2007522B4 /* CoreGraphics.framework */,
+				55E1450D16CBE2FE00234259 /* SenTestingKit.framework */,
+				A541D942ED5A4F488B232E53 /* libPods-KiwiUnitTest.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +161,25 @@
 				5582029C16B815E2007522B4 /* Default.png */,
 				5582029E16B815E2007522B4 /* Default@2x.png */,
 				558202A016B815E2007522B4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55E1451116CBE2FE00234259 /* KiwiUnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				55A1F8FF16CBEB10005EC82F /* CalculatorBrainSpec.m */,
+				55E1451216CBE2FF00234259 /* Supporting Files */,
+			);
+			path = KiwiUnitTest;
+			sourceTree = "<group>";
+		};
+		55E1451216CBE2FF00234259 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55E1451316CBE2FF00234259 /* KiwiUnitTest-Info.plist */,
+				55E1451416CBE2FF00234259 /* InfoPlist.strings */,
+				55E1451A16CBE2FF00234259 /* KiwiUnitTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -206,6 +255,25 @@
 			productReference = 5582028716B815E2007522B4 /* calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
+		55E1450B16CBE2FE00234259 /* KiwiUnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55E1451B16CBE2FF00234259 /* Build configuration list for PBXNativeTarget "KiwiUnitTest" */;
+			buildPhases = (
+				55E1450716CBE2FE00234259 /* Sources */,
+				55E1450816CBE2FE00234259 /* Frameworks */,
+				55E1450916CBE2FE00234259 /* Resources */,
+				55E1450A16CBE2FE00234259 /* ShellScript */,
+				C03FE8F3571746FEA29774FC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KiwiUnitTest;
+			productName = KiwiUnitTest;
+			productReference = 55E1450C16CBE2FE00234259 /* KiwiUnitTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -229,6 +297,7 @@
 			projectRoot = "";
 			targets = (
 				5582028616B815E2007522B4 /* calculator */,
+				55E1450B16CBE2FE00234259 /* KiwiUnitTest */,
 			);
 		};
 /* End PBXProject section */
@@ -250,7 +319,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55E1450916CBE2FE00234259 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55E1451616CBE2FF00234259 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55E1450A16CBE2FE00234259 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		C03FE8F3571746FEA29774FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-KiwiUnitTest-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5582028316B815E2007522B4 /* Sources */ = {
@@ -267,6 +374,14 @@
 				55271F6416BAA724007F6428 /* GettingLeftOperandState.m in Sources */,
 				55271F6716BAA7D2007F6428 /* GettingRightOperandState.m in Sources */,
 				55271F6A16BAB1BE007F6428 /* OperatorUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55E1450716CBE2FE00234259 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1F90016CBEB10005EC82F /* CalculatorBrainSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +402,14 @@
 				558202A316B815E2007522B4 /* en */,
 			);
 			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		55E1451416CBE2FF00234259 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55E1451516CBE2FF00234259 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -370,6 +493,42 @@
 			};
 			name = Release;
 		};
+		55E1451C16CBE2FF00234259 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE0C6E35C7745DD8C7F91B5 /* Pods-KiwiUnitTest.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KiwiUnitTest/KiwiUnitTest-Prefix.pch";
+				INFOPLIST_FILE = "KiwiUnitTest/KiwiUnitTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		55E1451D16CBE2FF00234259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EE0C6E35C7745DD8C7F91B5 /* Pods-KiwiUnitTest.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KiwiUnitTest/KiwiUnitTest-Prefix.pch";
+				INFOPLIST_FILE = "KiwiUnitTest/KiwiUnitTest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,6 +546,15 @@
 			buildConfigurations = (
 				558202AB16B815E2007522B4 /* Debug */,
 				558202AC16B815E2007522B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55E1451B16CBE2FF00234259 /* Build configuration list for PBXNativeTarget "KiwiUnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55E1451C16CBE2FF00234259 /* Debug */,
+				55E1451D16CBE2FF00234259 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

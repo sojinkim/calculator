@@ -1,6 +1,8 @@
 .DS_Store
 .localized
 
+Pods/
+
 # Build directory
 build/
  
