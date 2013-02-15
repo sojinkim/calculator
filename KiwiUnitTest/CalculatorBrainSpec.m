@@ -6,21 +6,16 @@ SPEC_BEGIN(CalculatorBrainSpec)
 describe(@"CalculatorBrainSpec", ^{
     context(@"brain is in initial state", ^{
         __block CalculatorBrain *myBrain = nil;
-        
+
         beforeEach(^{
             myBrain = [[CalculatorBrain alloc] init];
             [myBrain initialize];
         });
-        
+
         afterEach(^{
             myBrain = nil;
         });
-        
-        it(@"should ignore enter and stay in the initial state", ^{
-           [myBrain processEnter];
-           [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
-           });
-        
+
         it(@"should handle leading zeros correctly", ^{
             [myBrain processDigit:0];
             [myBrain processDigit:0];
@@ -77,6 +72,15 @@ describe(@"CalculatorBrainSpec", ^{
             [[theValue(myBrain.operatorString) should] equal:theValue(divide)];            
         });
 
+        it(@"should ignore enter and stay in the initial state", ^{
+            [myBrain processEnter];
+            [[theValue([myBrain currentState]) should] equal:theValue(brainState_init)];
+        });
+
+        it(@"should fail", ^{
+            id fake = nil;
+            [fake shouldNotBeNil];
+        });
     });
 });
 
