@@ -3,7 +3,7 @@
 
 SPEC_BEGIN(CalculatorBrainSpec)
 
-describe(@"CalculatorBrainSpec", ^{
+describe(@"CalculatorBrainSpec : state transition verification", ^{
     context(@"brain is in initial state", ^{
         __block CalculatorBrain *myBrain = nil;
 
@@ -15,74 +15,463 @@ describe(@"CalculatorBrainSpec", ^{
         afterEach(^{
             myBrain = nil;
         });
-
-        it(@"should handle leading zeros correctly", ^{
-            [myBrain processDigit:0];
-            [myBrain processDigit:0];
-            [myBrain processDigit:0];
-            [myBrain processDigit:3];
-            [myBrain processDigit:2];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"32")];
-        });
         
-        it(@"should handle the frist decimal correctly, ignore the second", ^{
-            [myBrain processDecimal];
-            [myBrain processDigit:0];
-            [myBrain processDigit:0];
-            [myBrain processDecimal];
-            [myBrain processDigit:2];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"0.002")];
-        });
-        
-        it(@"should handle sign correctly", ^{
-            [myBrain processDigit:2];
-            [myBrain processDigit:0];
-            [myBrain processSign];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"-20")];
-            [myBrain processDigit:0];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"-200")];
-            [myBrain processDecimal];
-            [myBrain processSign];
-            [myBrain processDigit:2];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"200.2")];
-        });
-        
-        it(@"should handle operator correctly", ^{
-            [myBrain processOperator:0];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"0")];
-            [[theValue(myBrain.operatorString) should] equal:theValue(add)];
-            
-            [myBrain processOperator:1];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"0")];
-            [[theValue(myBrain.operatorString) should] equal:theValue(sub)];
-            
-            [myBrain processOperator:2];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"0")];
-            [[theValue(myBrain.operatorString) should] equal:theValue(multiply)];
-            
-            [myBrain processOperator:3];
-            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
-            [[theValue(myBrain.inputString) should] equal:theValue(@"1")];
-            [[theValue(myBrain.operatorString) should] equal:theValue(divide)];            
-        });
-
-        it(@"should ignore enter and stay in the initial state", ^{
+        it(@"should remain in the init state", ^{
             [myBrain processEnter];
-            [[theValue([myBrain currentState]) should] equal:theValue(brainState_init)];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain dropCurrentCalculation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain performOperation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
         });
-
-        it(@"should fail", ^{
-            id fake = nil;
-            [fake shouldNotBeNil];
+        
+        it(@"should change state", ^{
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
         });
     });
 });
 
+describe(@"CalculatorBrainSpec : state transition verification", ^{
+    context(@"brain is in left state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_left];
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should remain in the left state", ^{
+            [myBrain processEnter];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain dropCurrentCalculation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain performOperation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });        
+    });
+});
+
+describe(@"CalculatorBrainSpec : state transition verification", ^{    
+    context(@"brain is in operator state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_op];
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should remain in the operator state", ^{            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processEnter];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain dropCurrentCalculation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain performOperation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });        
+    });
+});
+
+describe(@"CalculatorBrainSpec : state transition verification", ^{
+    context(@"brain is in right state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_right];
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should remain in the right state", ^{
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain processEnter];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+
+        });
+        
+        it(@"should change state", ^{
+            [myBrain dropCurrentCalculation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });
+        
+        it(@"should change state", ^{
+            [myBrain performOperation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });        
+    });
+});
+
+/////// above, should pass (of course not yet ㅋㅋ
+
+
+/////// below, need to inspect properly. just copy and paste'd
+
+describe(@"CalculatorBrain : verify input value handling which does not invlove state transition by inspecting propery values", ^{
+    context(@"brain is in initial state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        __block double memoryStore;
+        __block NSString *inputString;
+        __block operatorType operatorString;
+        __block double leftOperand;
+        __block double rightOperand;
+        __block double calculationResult;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            memoryStore = myBrain.memoryStore;
+            inputString = myBrain.inputString;
+            operatorString = myBrain.operatorString;
+            leftOperand = myBrain.leftOperand;
+            rightOperand = myBrain.rightOperand;
+            calculationResult = myBrain.calculationResult;            
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should handle", ^{
+            
+            [myBrain processEnter];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain dropCurrentCalculation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+            
+            [myBrain performOperation];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
+        });
+    });
+});
+
+describe(@"CalculatorBrain : verify input value handling which does not invlove state transition by inspecting propery values", ^{
+    context(@"brain is in left state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        __block double memoryStore;
+        __block NSString *inputString;
+        __block operatorType operatorString;
+        __block double leftOperand;
+        __block double rightOperand;
+        __block double calculationResult;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_left];
+            [myBrain initialize];
+            memoryStore = myBrain.memoryStore;
+            inputString = myBrain.inputString;
+            operatorString = myBrain.operatorString;
+            leftOperand = myBrain.leftOperand;
+            rightOperand = myBrain.rightOperand;
+            calculationResult = myBrain.calculationResult;
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should handle", ^{
+            [myBrain processEnter];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+            
+        });
+    });
+    
+});
+
+describe(@"CalculatorBrain : verify input value handling which does not invlove state transition by inspecting propery values", ^{
+    context(@"brain is in op state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        __block double memoryStore;
+        __block NSString *inputString;
+        __block operatorType operatorString;
+        __block double leftOperand;
+        __block double rightOperand;
+        __block double calculationResult;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_op];
+            [myBrain initialize];
+            memoryStore = myBrain.memoryStore;
+            inputString = myBrain.inputString;
+            operatorString = myBrain.operatorString;
+            leftOperand = myBrain.leftOperand;
+            rightOperand = myBrain.rightOperand;
+            calculationResult = myBrain.calculationResult;
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should handle", ^{
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processOperator:add];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_op)];
+            
+        });
+    });
+});
+
+describe(@"CalculatorBrain : verify input value handling which does not invlove state transition by inspecting propery values", ^{
+    
+    context(@"brain is in right state", ^{
+        __block CalculatorBrain *myBrain = nil;
+        __block double memoryStore;
+        __block NSString *inputString;
+        __block operatorType operatorString;
+        __block double leftOperand;
+        __block double rightOperand;
+        __block double calculationResult;
+        
+        beforeEach(^{
+            myBrain = [[CalculatorBrain alloc] init];
+            [myBrain initialize];
+            [myBrain gotoTheState:brainState_right];
+            [myBrain initialize];
+            memoryStore = myBrain.memoryStore;
+            inputString = myBrain.inputString;
+            operatorString = myBrain.operatorString;
+            leftOperand = myBrain.leftOperand;
+            rightOperand = myBrain.rightOperand;
+            calculationResult = myBrain.calculationResult;
+        });
+        
+        afterEach(^{
+            myBrain = nil;
+        });
+        
+        it(@"should handle", ^{
+            [myBrain processMemory:memClear];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memAdd];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memSub];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processMemory:memRecall];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processSign];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processDecimal];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+            [myBrain processDigit:9];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+            
+        });
+    });
+});
 
 SPEC_END

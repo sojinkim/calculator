@@ -135,6 +135,10 @@
     [self updateDisplay];
 }
 
+- (IBAction)memoryPressed:(UIButton *)sender {
+}
+
+
 - (IBAction)operatorPressed:(UIButton *)sender
 {
     [self.brain processOperator:[sender tag]];

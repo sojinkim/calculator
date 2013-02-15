@@ -43,7 +43,7 @@
                                     <constraint firstItem="NPu-Jc-ZVG" firstAttribute="leading" secondItem="JLC-Bf-MJx" secondAttribute="leading" type="default" id="rOE-jM-nQm"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="p5r-Gk-5b9"/>
@@ -64,10 +64,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lzz-9f-ccE"/>
-                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ySs-9a-6ip"/>
+                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="sfS-AV-p2d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" type="user" id="deR-Fv-0cf"/>
@@ -89,10 +89,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rum-Do-UKY"/>
-                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="Dl1-jv-9gJ"/>
+                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="UTg-fg-rcU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" type="user" id="Aqj-Rd-Thl"/>
@@ -114,10 +114,10 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="a6A-bD-xia"/>
-                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="zPs-6d-XVa"/>
+                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="gIl-4w-ccx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Moo-d1-uFV"/>
@@ -139,7 +139,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lhS-jc-u5i"/>
-                                    <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ebH-gW-l20"/>
+                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="S1T-cc-eBV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voS-6k-Pac">

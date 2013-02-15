@@ -56,6 +56,26 @@
     return self.state.whoAmI;
 }
 
+- (void)gotoTheState:(brainState)newState
+{
+    switch (newState) {
+        case brainState_init:
+            self.state = self.initialState;
+            break;
+        case brainState_left:
+            self.state = self.gettingLeftOperandState;
+            break;
+        case brainState_op:
+            self.state = self.gettingOperatorState;
+            break;
+        case brainState_right:
+            self.state = self.gettingRightOperandState;
+            break;
+        default:
+            NSAssert(NO, @"No such BrainState");
+    }
+}
+
 - (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input
 {
     [self.state leave];
@@ -109,12 +129,15 @@
 
 - (void)processOperator:(int)op
 {
-    if ([OperatorUtil isArithmeticOperator:op]) {
-        [self.state processOperator:op];
-    } else if (memClear == op) { // mc
+    [self.state processOperator:op];
+}
+
+- (void)processMemory:(int)mem
+{
+    if (memClear == mem) { // mc
         self.memoryStore = 0;
     } else {
-        [self.state processMemoryFunction:op];       // mr, m-, m+
+        [self.state processMemoryFunction:mem];       // mr, m-, m+
     }
 }
 

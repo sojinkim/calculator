@@ -19,6 +19,7 @@
 
 - (void)processDigit:(int)digit;
 - (void)processOperator:(int)op;
+- (void)processMemory:(int)mem;
 - (void)processEnter;
 - (void)processSign;
 - (void)processDecimal;
@@ -30,6 +31,7 @@
 - (double)rightOperand;
 - (double)calculationResult;
 - (brainState)currentState;
+- (void)gotoTheState:(brainState)newState;
 
 - (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input;
 
