@@ -45,4 +45,9 @@
     return brainState_self;
 }
 
+- (brainState)processMemRecall
+{
+    return brainState_self;
+}
+
 @end

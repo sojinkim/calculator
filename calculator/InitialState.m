@@ -50,6 +50,11 @@
     return brainState_left;
 }
 
+- (brainState)processMemRecall
+{
+    return brainState_left;
+}
+
 - (void)cleanBeforeLeave
 {
     self.brain.calculationResult = 0;

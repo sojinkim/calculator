@@ -13,6 +13,7 @@
 #import "GettingRightOperandState.h"
 
 @interface CalculatorBrain () 
+
 @property (nonatomic) BrainState *state;
 @property (nonatomic, strong) InitialState *initialState;
 @property (nonatomic, strong) GettingOperatorState *gettingOperatorState;
@@ -36,10 +37,10 @@
     return self.state.whoAmI;
 }
 
-- (void)gotoTheState:(brainState)newState
+- (BOOL)moveToNewState:(brainState)newState
 {
-    if ( newState == self.currentState ) {
-        return;
+    if ( (newState == brainState_self) || (newState == self.currentState) ) {
+        return NO;
     }
     
     [self.state cleanBeforeLeave];
@@ -59,6 +60,7 @@
         default:
             NSAssert(NO, @"No such BrainState");
     }
+    return YES;
 }
 
 - (void)initialize
@@ -80,66 +82,58 @@
     self.leftOperand = self.rightOperand = 0;
     self.operatorString = invalid;
     self.calculationResult = 0;
-    [self gotoTheState:brainState_init];
+    self.state = self.initialState;
 }
 
 - (void)processDigit:(int)digit
 {
-    brainState newState = [self.state processDigit:digit];
-    
-    while (brainState_self != newState) {
-        [self gotoTheState:newState];
-        newState = [self.state processDigit:digit];
-    }
+    while ( [self moveToNewState:[self.state processDigit:digit]] );
 }
 
 - (void)processOperator:(int)op
 {
-    brainState newState = [self.state processOperator:op];
+    while ( [self moveToNewState:[self.state processOperator:op]] );
+}
 
-    while(brainState_self != newState) {
-        [self gotoTheState:newState];
-        newState = [self.state processOperator:op];
+- (void)processMemoryFunction:(int)func withValue:(double)value;
+{
+    NSLog(@"memory button process : button tag %d, value %g", func, value);
+    
+    switch (func) {
+        case memAdd:
+            self.memoryStore += value;
+            break;
+        case memSub:
+            self.memoryStore -= value;
+            break;
+        default:
+            break;
     }
 }
 
-- (void)processMemory:(int)mem
+- (void)processMemClear
 {
-    if (memClear == mem) { // mc
-        self.memoryStore = 0;
-    } else {   // mr, m-, m+
-    
-    }
+    self.memoryStore = 0;
+}
+
+- (void)processMemRecall
+{
+    while ( [self moveToNewState:[self.state processMemRecall]] );
 }
 
 - (void)processEnter
 {
-    brainState newState = [self.state processEnter];
-    
-    while(brainState_self != newState) {
-        [self gotoTheState:newState];
-        newState = [self.state processEnter];
-    }
+    while ( [self moveToNewState:[self.state processEnter]] );
 }
 
 - (void)processSign
 {
-    brainState newState = [self.state processSign];
-    
-    while(brainState_self != newState) {
-        [self gotoTheState:newState];
-        newState = [self.state processSign];
-    }
+    while ( [self moveToNewState:[self.state processSign]] );
 }
 
 - (void)processDecimal
 {
-    brainState newState = [self.state processDecimal];
-    
-    while (brainState_self != newState) {
-        [self gotoTheState:newState];
-        newState= [self.state processDecimal];
-    }
+    while ( [self moveToNewState:[self.state processDecimal]] );
 }
 
 - (double)performOperation
@@ -156,5 +150,18 @@
     
     return self.calculationResult;
 }
+
+- (void)manipulateInputStringForSignChange
+{
+    NSRange range = {0 , 1};
+    
+    if ( [self.inputString hasPrefix:@"-"] ) {
+        self.inputString = [self.inputString stringByReplacingCharactersInRange:range withString:@""];
+    }
+    else {
+        self.inputString = [@"-" stringByAppendingString:self.inputString];
+    }
+}
+
 
 @end

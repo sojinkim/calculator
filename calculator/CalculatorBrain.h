@@ -25,12 +25,16 @@
 
 - (void)processDigit:(int)digit;
 - (void)processOperator:(int)op;
-- (void)processMemory:(int)mem;
+- (void)processMemoryFunction:(int)func withValue:(double)value;
+- (void)processMemClear;
+- (void)processMemRecall;
 - (void)processEnter;
 - (void)processSign;
 - (void)processDecimal;
 
-- (double)performOperation;  // returns result
 - (brainState)currentState;
+
+- (double)performOperation;  
+- (void)manipulateInputStringForSignChange;
 
 @end

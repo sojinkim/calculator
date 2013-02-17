@@ -12,6 +12,7 @@
 
 @interface GettingRightOperandState() {
     BOOL isDecimalPressed;
+    BOOL isMemRecalled;
 }
 @property (nonatomic,weak) CalculatorBrain *brain;
 @end
@@ -32,6 +33,10 @@
 
 - (brainState)processDigit:(int)digit
 {
+    if (isMemRecalled) {
+        [self cancleMemRecall];
+    }
+    
     if ( [self.brain.inputString isEqualToString:@"0"] ) {  
         self.brain.inputString = [NSString stringWithFormat:@"%d", digit];
     } else {
@@ -44,31 +49,65 @@
 
 - (brainState)processOperator:(operatorType)op
 {
+    if (isMemRecalled) {
+        [self pushMemRecallValueToOperand];
+    }
+    
     [self.brain performOperation];
     return brainState_init;
 }
 
 - (brainState)processEnter
 {
+    if (isMemRecalled){
+        [self pushMemRecallValueToOperand];
+    }
+    
     [self.brain performOperation];
     return brainState_init;
 }
 
 - (brainState)processSign
 {
-    self.brain.rightOperand *= -1;
-    self.brain.inputString = [NSString stringWithFormat:@"%g", self.brain.rightOperand];
+    [self.brain manipulateInputStringForSignChange];
+    
+    if (!isMemRecalled) {
+        self.brain.rightOperand = [self.brain.inputString doubleValue];
+    }
     
     return brainState_self;
 }
 
 - (brainState)processDecimal
 {
+    if (isMemRecalled){
+        [self cancleMemRecall];
+    }
+    
     if (!isDecimalPressed) {
         isDecimalPressed = YES;
         self.brain.inputString = [self.brain.inputString stringByAppendingString:@"."];
     }
     return brainState_self;
+}
+
+- (brainState)processMemRecall
+{
+    isMemRecalled = YES;
+    self.brain.inputString = [NSString stringWithFormat:@"%g", self.brain.memoryStore];
+    
+    return brainState_self;
+}
+
+- (void)cancleMemRecall
+{
+    isMemRecalled = NO;
+    self.brain.inputString = @"0";
+}
+
+- (void)pushMemRecallValueToOperand
+{
+    self.brain.RightOperand = [self.brain.inputString doubleValue];
 }
 
 - (void)cleanBeforeLeave
@@ -79,6 +118,7 @@
     self.brain.inputString = @"0";
     
     isDecimalPressed = NO;
+    isMemRecalled = NO;
 }
 
 @end

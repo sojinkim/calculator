@@ -95,13 +95,7 @@
 
 - (IBAction)buttonPressed:(UIButton *)sender
 {
-    NSLog(@"Button pressed:%@", sender.currentTitle);
-    if ( (self.buttonMplus == sender) || (self.buttonMminus == sender) ) {
-        [self.buttonMr setBackgroundColor:[UIColor yellowColor]];
-    }
-    if ( self.buttonMc == sender ) {
-        [self.buttonMr setBackgroundColor:[UIColor whiteColor]];
-    }    
+    NSLog(@"Button pressed:%@", sender.currentTitle);  
 }
 
 - (IBAction)digitPressed:(UIButton *)sender
@@ -134,9 +128,20 @@
     [self updateDisplay];
 }
 
-- (IBAction)memoryPressed:(UIButton *)sender {
+- (IBAction)memRecallPressed:(UIButton *)sender {
+    [self.brain processMemRecall];
+    [self updateDisplay];
 }
 
+- (IBAction)memClearPressed:(UIButton *)sender {
+    [self.brain processMemClear];
+    [self.buttonMr setBackgroundColor:[UIColor whiteColor]];
+}
+
+- (IBAction)memoryFuntionPressed:(UIButton *)sender {
+    [self.brain processMemoryFunction:[sender tag] withValue:[self.resultLabel.text doubleValue]];
+    [self.buttonMr setBackgroundColor:[UIColor yellowColor]];
+}
 
 - (IBAction)operatorPressed:(UIButton *)sender
 {

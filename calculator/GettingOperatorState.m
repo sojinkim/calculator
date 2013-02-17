@@ -47,6 +47,11 @@
     return brainState_right;
 }
 
+- (brainState)processMemRecall
+{
+    return brainState_right;
+}
+
 - (brainState)processOperator:(operatorType)op
 {
     self.brain.operatorString = op;

@@ -23,5 +23,6 @@ typedef enum {
 - (brainState)processEnter;
 - (brainState)processSign;
 - (brainState)processDecimal;
+- (brainState)processMemRecall;
 
 @end

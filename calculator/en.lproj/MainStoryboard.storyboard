@@ -64,7 +64,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lzz-9f-ccE"/>
-                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="sfS-AV-p2d"/>
+                                    <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="aXL-Xl-Y18"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rum-Do-UKY"/>
-                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="UTg-fg-rcU"/>
+                                    <action selector="memClearPressed:" destination="2" eventType="touchUpInside" id="WBi-ze-Y2a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
@@ -114,7 +114,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="a6A-bD-xia"/>
-                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="gIl-4w-ccx"/>
+                                    <action selector="memRecallPressed:" destination="2" eventType="touchUpInside" id="vtk-5l-4wh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
@@ -139,7 +139,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lhS-jc-u5i"/>
-                                    <action selector="memoryPressed:" destination="2" eventType="touchUpInside" id="S1T-cc-eBV"/>
+                                    <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="HbI-ai-wqv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voS-6k-Pac">
@@ -662,6 +662,51 @@
             <point key="canvasLocation" x="-130" y="7"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalculatorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalculatorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="clearPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="decimalPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="digitPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="enterPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="memClearPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="memRecallPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="memoryFuntionPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="operatorPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="signPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button0" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button2" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button3" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button4" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button5" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button7" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button8" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="button9" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonAdd" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonC" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonDecimal" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonDivide" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonEquals" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMc" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMminus" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMplus" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMr" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMultiply" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSign" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSubtract" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="equationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="resultContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
