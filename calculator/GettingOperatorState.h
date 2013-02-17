@@ -12,7 +12,6 @@
 @class CalculatorBrain;
 
 @interface GettingOperatorState : BrainState
-@property (nonatomic) operatorType operatorString;
 
 + (GettingOperatorState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

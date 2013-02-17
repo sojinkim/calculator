@@ -11,7 +11,6 @@
 @class CalculatorBrain;
 
 @interface GettingLeftOperandState : BrainState
-@property (nonatomic) double operand;
 
 + (GettingLeftOperandState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

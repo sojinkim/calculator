@@ -11,6 +11,6 @@
 @class CalculatorBrain;
 
 @interface InitialState : BrainState
-@property (nonatomic) double calculationResult;
+
 + (InitialState *)brainStateOfBrain:(CalculatorBrain *)myBrain;
 @end

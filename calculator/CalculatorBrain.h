@@ -11,8 +11,14 @@
 #import "OperatorUtil.h"
 
 @interface CalculatorBrain : NSObject
+
+@property (nonatomic, strong) NSString *inputString;
+@property (nonatomic) double leftOperand;
+@property (nonatomic) operatorType operatorString;
+@property (nonatomic) double rightOperand;
+@property (nonatomic) double calculationResult;
 @property (nonatomic) double memoryStore;
-@property (nonatomic) NSString *inputString;
+
 
 - (void)initialize;
 - (void)dropCurrentCalculation;
@@ -25,14 +31,6 @@
 - (void)processDecimal;
 
 - (double)performOperation;  // returns result
-
-- (operatorType)operatorString;
-- (double)leftOperand;
-- (double)rightOperand;
-- (double)calculationResult;
 - (brainState)currentState;
-- (void)gotoTheState:(brainState)newState;
-
-- (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input;
 
 @end

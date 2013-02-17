@@ -10,44 +10,39 @@
 
 @implementation BrainState
 
-- (void)enterWith:(double)initValue causedBy:(inputType)input
-{
-    NSAssert(NO, @"please implement this");
-}
-
-- (void)leave
-{
-    NSAssert(NO, @"please implement this");
-}
-
 - (brainState)whoAmI
 {
     NSAssert(NO, @"please implement this");
     return brainState_init;
 }
 
-- (void)processDigit:(int)digit
+- (void)cleanBeforeLeave
 {
 }
 
-- (void)processOperator:(operatorType)op
+- (brainState)processDigit:(int)digit
 {
+    return brainState_self;
 }
 
-- (void)processEnter
+- (brainState)processOperator:(operatorType)op
 {
+    return brainState_self;
 }
 
-- (void)processSign
+- (brainState)processEnter
 {
+    return brainState_self;
 }
 
-- (void)processDecimal
+- (brainState)processSign
 {
+    return brainState_self;
 }
 
-- (void)processMemoryFunction:(int)func
+- (brainState)processDecimal
 {
+    return brainState_self;
 }
 
 @end

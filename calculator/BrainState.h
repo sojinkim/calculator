@@ -10,21 +10,18 @@
 #import "OperatorUtil.h"
 
 typedef enum {
-    brainState_init, brainState_left, brainState_op, brainState_right
+    brainState_self = -1, brainState_init, brainState_left, brainState_op, brainState_right
 } brainState;
 
 @interface BrainState : NSObject
 
-- (void)enterWith:(double)initValue causedBy:(inputType)input;
-- (void)leave;
 - (brainState)whoAmI;
+- (void)cleanBeforeLeave;
 
-- (void)processDigit:(int)digit;
-- (void)processOperator:(operatorType)op;
-- (void)processEnter;
-- (void)processSign;
-- (void)processDecimal;
-
-- (void)processMemoryFunction:(int)func;
+- (brainState)processDigit:(int)digit;
+- (brainState)processOperator:(operatorType)op;
+- (brainState)processEnter;
+- (brainState)processSign;
+- (brainState)processDecimal;
 
 @end

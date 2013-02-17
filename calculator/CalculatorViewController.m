@@ -76,8 +76,7 @@
 
 - (void)updateDisplay
 {
-    NSLog(@"state%d : %g %@ %g, inputstring=%@", self.brain.currentState, self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString], self.brain.rightOperand, self.brain.inputString);
-    
+    NSLog(@"state%d : result = %g, %g %@ %g, inputstring=%@", self.brain.currentState, self.brain.calculationResult, self.brain.leftOperand, [OperatorUtil stringValue:self.brain.operatorString], self.brain.rightOperand, self.brain.inputString);
     
     if (brainState_init == self.brain.currentState) {   // display result
         self.resultLabel.text = [NSString stringWithFormat:@"%g", self.brain.calculationResult];

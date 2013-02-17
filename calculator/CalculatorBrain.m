@@ -31,26 +31,6 @@
     return _inputString;
 }
 
-- (operatorType)operatorString
-{
-    return self.gettingOperatorState.operatorString;
-}
-
-- (double)leftOperand
-{
-    return self.gettingLeftOperandState.operand;
-}
-
-- (double)rightOperand
-{
-    return self.gettingRightOperandState.operand;
-}
-
-- (double)calculationResult
-{
-    return self.initialState.calculationResult;
-}
-
 - (brainState)currentState
 {
     return self.state.whoAmI;
@@ -58,6 +38,11 @@
 
 - (void)gotoTheState:(brainState)newState
 {
+    if ( newState == self.currentState ) {
+        return;
+    }
+    
+    [self.state cleanBeforeLeave];
     switch (newState) {
         case brainState_init:
             self.state = self.initialState;
@@ -76,31 +61,6 @@
     }
 }
 
-- (void)stateTransitionTo:(brainState)state withInitialValue:(double)value causedBy:(inputType)input
-{
-    [self.state leave];
-    
-    switch (state) {
-        case brainState_init:
-            self.gettingLeftOperandState.operand = 0;
-            self.state = self.initialState;
-            break;
-        case brainState_left:
-            self.state = self.gettingLeftOperandState;
-            break;
-        case brainState_op:
-            self.state = self.gettingOperatorState;
-            break;
-        case brainState_right:
-            self.state = self.gettingRightOperandState;
-            break;
-        default:
-            NSAssert(NO, @"No such BrainState");    
-    }
-    
-    [self.state enterWith:value causedBy:input];
-}
-
 - (void)initialize
 {
     if (!self.state) {
@@ -116,61 +76,85 @@
 
 - (void)dropCurrentCalculation
 {
-    [self stateTransitionTo:brainState_init withInitialValue:0 causedBy:inputType_clear];
+    self.inputString = @"0";
+    self.leftOperand = self.rightOperand = 0;
+    self.operatorString = invalid;
+    self.calculationResult = 0;
+    [self gotoTheState:brainState_init];
 }
 
 - (void)processDigit:(int)digit
 {
-    if ( [self.inputString isEqualToString:@"0"] && (0 == digit) ) {
-        return;
+    brainState newState = [self.state processDigit:digit];
+    
+    while (brainState_self != newState) {
+        [self gotoTheState:newState];
+        newState = [self.state processDigit:digit];
     }
-    [self.state processDigit:digit];
 }
 
 - (void)processOperator:(int)op
 {
-    [self.state processOperator:op];
+    brainState newState = [self.state processOperator:op];
+
+    while(brainState_self != newState) {
+        [self gotoTheState:newState];
+        newState = [self.state processOperator:op];
+    }
 }
 
 - (void)processMemory:(int)mem
 {
     if (memClear == mem) { // mc
         self.memoryStore = 0;
-    } else {
-        [self.state processMemoryFunction:mem];       // mr, m-, m+
+    } else {   // mr, m-, m+
+    
     }
 }
 
 - (void)processEnter
 {
-    [self.state processEnter];
+    brainState newState = [self.state processEnter];
+    
+    while(brainState_self != newState) {
+        [self gotoTheState:newState];
+        newState = [self.state processEnter];
+    }
 }
 
 - (void)processSign
 {
-    [self.state processSign];
+    brainState newState = [self.state processSign];
+    
+    while(brainState_self != newState) {
+        [self gotoTheState:newState];
+        newState = [self.state processSign];
+    }
 }
 
 - (void)processDecimal
 {
-    [self.state processDecimal];
+    brainState newState = [self.state processDecimal];
+    
+    while (brainState_self != newState) {
+        [self gotoTheState:newState];
+        newState= [self.state processDecimal];
+    }
 }
 
 - (double)performOperation
 {
-    double result = 0.0f;
-    
     if (add == self.operatorString) {
-        result = self.leftOperand + self.rightOperand;
+        self.calculationResult = self.leftOperand + self.rightOperand;
     } else if (sub == self.operatorString) {
-        result = self.leftOperand - self.rightOperand;
+        self.calculationResult = self.leftOperand - self.rightOperand;
     } else if (multiply == self.operatorString) {
-        result = self.leftOperand * self.rightOperand;
+        self.calculationResult = self.leftOperand * self.rightOperand;
     } else if (divide == self.operatorString) {
-        result = self.leftOperand / self.rightOperand;
+        self.calculationResult = self.leftOperand / self.rightOperand;
     } else {NSAssert(NO, @"not supported arithmetic operator"); }
     
-    return result;
+    return self.calculationResult;
 }
 
 @end

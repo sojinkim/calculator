@@ -20,17 +20,8 @@
 {
     GettingOperatorState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
-    brainState.operatorString = invalid;
+    brainState.brain.operatorString = invalid;
     return brainState;
-}
-
-- (void)enterWith:(double)initValue causedBy:(inputType)input
-{
-    self.operatorString = (operatorType)initValue;
-}
-
-- (void)leave
-{
 }
 
 - (brainState)whoAmI
@@ -38,31 +29,29 @@
     return brainState_op;
 }
 
-- (void)processDigit:(int)digit
+- (brainState)processDigit:(int)digit
 {
-    [self.brain stateTransitionTo:brainState_right withInitialValue:digit causedBy:inputType_digit];
+    return brainState_right;
 }
 
-- (void)processDecimal
+- (brainState)processDecimal
 {
-    [self.brain stateTransitionTo:brainState_right withInitialValue:-1 causedBy:inputType_decimal];
+    return brainState_right;
 }
 
-- (void)processEnter
+- (brainState)processEnter
 {
-    [self.brain stateTransitionTo:brainState_init withInitialValue:[self.brain performOperation] causedBy:inputType_enter];
+    NSAssert( invalid != self.brain.operatorString , @"operator should not be invliad" );
+    
+    [self.brain performOperation];
+    return brainState_right;
 }
 
-- (void)processOperator:(operatorType)op
+- (brainState)processOperator:(operatorType)op
 {
-    self.operatorString = op; // overwrite
+    self.brain.operatorString = op;
+    return brainState_self;
 }
 
-- (void)processMemoryFunction:(int)func
-{
-    if (memRecall == func) {
-        [self.brain stateTransitionTo:brainState_right withInitialValue:self.brain.memoryStore causedBy:inputType_mem];
-    }
-}
 
 @end

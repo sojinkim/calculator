@@ -23,56 +23,36 @@
     return brainState;
 }
 
-- (void)enterWith:(double)initValue causedBy:(inputType)input
-{
-    self.calculationResult = initValue;
-    if ( [OperatorUtil isArithmeticOperator:[OperatorUtil operatorTypeFromInputType:input]] ) {
-        [self processOperator:[OperatorUtil operatorTypeFromInputType:input]];
-    }
-}
-
-- (void)leave
-{
-}
-
 - (brainState)whoAmI
 {
     return brainState_init;
 }
 
-- (void)processOperator:(operatorType)op
+- (brainState)processOperator:(operatorType)op
 {
-    inputType input = [OperatorUtil inputTypeFromOperatorType:op];
-    [self.brain stateTransitionTo:brainState_left withInitialValue:self.calculationResult causedBy:input];
-    [self.brain stateTransitionTo:brainState_op withInitialValue:op causedBy:input];
+    self.brain.leftOperand = self.brain.calculationResult;
+    return brainState_left;
 }
 
-- (void)processDigit:(int)digit
+- (brainState)processDigit:(int)digit
 {
-    [self.brain stateTransitionTo:brainState_left withInitialValue:digit causedBy:inputType_digit];
+    return brainState_left;
 }
 
-- (void)processSign
+- (brainState)processSign
 {
-    [self.brain stateTransitionTo:brainState_left withInitialValue:(self.calculationResult*-1) causedBy:inputType_sign];
+    self.brain.calculationResult = self.brain.calculationResult * (-1);
+    return brainState_self;
 }
 
-- (void)processDecimal
+- (brainState)processDecimal
 {
-    [self.brain stateTransitionTo:brainState_left withInitialValue:-1 causedBy:inputType_decimal];
+    return brainState_left;
 }
 
-- (void)processMemoryFunction:(int)func
+- (void)cleanBeforeLeave
 {
-    if (memRecall == func) {
-        [self.brain stateTransitionTo:brainState_left withInitialValue:self.brain.memoryStore causedBy:inputType_mem];
-    } else if (memSub == func) {
-        self.brain.memoryStore -= self.calculationResult;
-    } else if (memAdd == func) {
-        self.brain.memoryStore += self.calculationResult;
-    } else {
-        NSAssert(NO, @"not supported mem operator %d", func);
-    }
+    self.brain.calculationResult = 0;
 }
 
 @end
