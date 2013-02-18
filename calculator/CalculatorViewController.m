@@ -10,6 +10,7 @@
 #import "CalculatorBrain.h"
 #import "OperatorUtil.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface CalculatorViewController ()
 
@@ -95,7 +96,8 @@
 
 - (IBAction)buttonPressed:(UIButton *)sender
 {
-    NSLog(@"Button pressed:%@", sender.currentTitle);  
+    NSLog(@"Button pressed:%@", sender.currentTitle);
+    AudioServicesPlaySystemSound(0x450);
 }
 
 - (IBAction)digitPressed:(UIButton *)sender

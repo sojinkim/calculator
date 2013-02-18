@@ -28,6 +28,8 @@
 		55A1F90016CBEB10005EC82F /* CalculatorBrainSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1F8FF16CBEB10005EC82F /* CalculatorBrainSpec.m */; };
 		55B2892416C689290086B8F1 /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B2892216C689290086B8F1 /* calculator.png */; };
 		55B2892516C689290086B8F1 /* calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B2892316C689290086B8F1 /* calculator@2x.png */; };
+		55BF886B16D1354200F37A0F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BF886A16D1354200F37A0F /* QuartzCore.framework */; };
+		55BF887916D261E200F37A0F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BF887816D261E200F37A0F /* AudioToolbox.framework */; };
 		55E1450E16CBE2FE00234259 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E1450D16CBE2FE00234259 /* SenTestingKit.framework */; };
 		55E1450F16CBE2FE00234259 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028A16B815E2007522B4 /* UIKit.framework */; };
 		55E1451016CBE2FE00234259 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028C16B815E2007522B4 /* Foundation.framework */; };
@@ -72,6 +74,8 @@
 		55A1F8FF16CBEB10005EC82F /* CalculatorBrainSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrainSpec.m; sourceTree = "<group>"; };
 		55B2892216C689290086B8F1 /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
 		55B2892316C689290086B8F1 /* calculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calculator@2x.png"; sourceTree = "<group>"; };
+		55BF886A16D1354200F37A0F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		55BF887816D261E200F37A0F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		55E1450C16CBE2FE00234259 /* KiwiUnitTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KiwiUnitTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55E1450D16CBE2FE00234259 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		55E1451316CBE2FF00234259 /* KiwiUnitTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KiwiUnitTest-Info.plist"; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BF887916D261E200F37A0F /* AudioToolbox.framework in Frameworks */,
+				55BF886B16D1354200F37A0F /* QuartzCore.framework in Frameworks */,
 				5582028B16B815E2007522B4 /* UIKit.framework in Frameworks */,
 				5582028D16B815E2007522B4 /* Foundation.framework in Frameworks */,
 				5582028F16B815E2007522B4 /* CoreGraphics.framework in Frameworks */,
@@ -130,6 +136,8 @@
 		5582028916B815E2007522B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55BF886A16D1354200F37A0F /* QuartzCore.framework */,
+				55BF887816D261E200F37A0F /* AudioToolbox.framework */,
 				5582028A16B815E2007522B4 /* UIKit.framework */,
 				5582028C16B815E2007522B4 /* Foundation.framework */,
 				5582028E16B815E2007522B4 /* CoreGraphics.framework */,

@@ -82,7 +82,7 @@
     self.leftOperand = self.rightOperand = 0;
     self.operatorString = invalid;
     self.calculationResult = 0;
-    self.state = self.initialState;
+    [self moveToNewState:brainState_init];
 }
 
 - (void)processDigit:(int)digit
