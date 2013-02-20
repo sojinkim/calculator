@@ -61,30 +61,30 @@
 
 - (void)viewDidLayoutSubviews
 {
-    [self addGradienEffectToButton:self.button0 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button1 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button2 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button3 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button4 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button5 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button6 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button7 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button8 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.button9 withBaseColor:[UIColor greenColor]];
-    [self addGradienEffectToButton:self.buttonDecimal withBaseColor:[UIColor greenColor]];
+    [self addGradienEffectToButton:self.button0 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button1 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button2 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button3 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button4 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button5 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button6 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button7 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button8 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.button9 withBaseColor:[UIColor brownColor]];
+    [self addGradienEffectToButton:self.buttonDecimal withBaseColor:[UIColor brownColor]];
     
-    [self addGradienEffectToButton:self.buttonMc withBaseColor:[UIColor lightGrayColor]];
-    [self addGradienEffectToButton:self.buttonMplus withBaseColor:[UIColor whiteColor]];
-    [self addGradienEffectToButton:self.buttonMminus withBaseColor:[UIColor whiteColor]];
-    [self addGradienEffectToButton:self.buttonMr withBaseColor:[UIColor whiteColor]];
+    [self addGradienEffectToButton:self.buttonMc withBaseColor:[UIColor blackColor]];
+    [self addGradienEffectToButton:self.buttonMplus withBaseColor:[UIColor blackColor]];
+    [self addGradienEffectToButton:self.buttonMminus withBaseColor:[UIColor blackColor]];
+    [self addGradienEffectToButton:self.buttonMr withBaseColor:[UIColor blackColor]];
     
-    [self addGradienEffectToButton:self.buttonC withBaseColor:[UIColor lightGrayColor]];
+    [self addGradienEffectToButton:self.buttonC withBaseColor:[UIColor blueColor]];
     [self addGradienEffectToButton:self.buttonSign withBaseColor:[UIColor blueColor]];
     [self addGradienEffectToButton:self.buttonDivide withBaseColor:[UIColor blueColor]];
     [self addGradienEffectToButton:self.buttonMultiply withBaseColor:[UIColor blueColor]];
     [self addGradienEffectToButton:self.buttonSubtract withBaseColor:[UIColor blueColor]];
     [self addGradienEffectToButton:self.buttonAdd withBaseColor:[UIColor blueColor]];
-    [self addGradienEffectToButton:self.buttonEquals withBaseColor:[UIColor blueColor]];
+    [self addGradienEffectToButton:self.buttonEquals withBaseColor:[UIColor yellowColor]];
 }
 
 - (void)addGradienEffectToButton:(UIButton *)button withBaseColor:(UIColor *)color
@@ -100,11 +100,11 @@
     gradientLayer.frame = layer.bounds;
     
     gradientLayer.colors = [NSArray arrayWithObjects:
-                            (id)[UIColor colorWithWhite:1.0f alpha:0.3f].CGColor,
+                            (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
                             (id)[UIColor colorWithWhite:1.0f alpha:0.5f].CGColor,
-                            (id)[UIColor colorWithWhite:1.0f alpha:0.5f].CGColor,
-                            (id)[UIColor colorWithWhite:0.8f alpha:0.4f].CGColor,
-                            (id)[UIColor colorWithWhite:0.9f alpha:0.5f].CGColor,
+                            (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
+                            (id)[UIColor colorWithWhite:0.8f alpha:0.2f].CGColor,
+                            (id)[UIColor colorWithWhite:0.9f alpha:0.2f].CGColor,
                             nil];
     
     gradientLayer.locations = [NSArray arrayWithObjects:
@@ -153,7 +153,8 @@
     }
 }
 
-- (IBAction)buttonPressed:(UIButton *)sender {
+- (IBAction)buttonPressed:(UIButton *)sender
+{
     NSLog(@"Button pressed:%@", sender.currentTitle);
     AudioServicesPlaySystemSound(0x450);
 }
@@ -195,12 +196,14 @@
 
 - (IBAction)memClearPressed:(UIButton *)sender {
     [self.brain processMemClear];
-    [self.buttonMr setBackgroundColor:[UIColor whiteColor]];
+    self.buttonMr.layer.borderColor = [UIColor colorWithWhite:0.2f alpha:0.8f].CGColor;
+    self.buttonMr.layer.borderWidth = 2.0f;
 }
 
 - (IBAction)memoryFuntionPressed:(UIButton *)sender {
     [self.brain processMemoryFunction:[sender tag] withValue:[self.resultLabel.text doubleValue]];
-    [self.buttonMr setBackgroundColor:[UIColor yellowColor]];
+    self.buttonMr.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.buttonMr.layer.borderWidth = 3.0f;
 }
 
 - (IBAction)operatorPressed:(UIButton *)sender
