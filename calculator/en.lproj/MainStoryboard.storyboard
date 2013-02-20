@@ -63,7 +63,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lzz-9f-ccE"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="nxS-aE-U4o"/>
                                     <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="aXL-Xl-Y18"/>
                                 </connections>
                             </button>
@@ -88,7 +88,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rum-Do-UKY"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="D2U-A9-fMz"/>
                                     <action selector="memClearPressed:" destination="2" eventType="touchUpInside" id="WBi-ze-Y2a"/>
                                 </connections>
                             </button>
@@ -113,7 +113,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="a6A-bD-xia"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="K4K-xg-FP6"/>
                                     <action selector="memRecallPressed:" destination="2" eventType="touchUpInside" id="vtk-5l-4wh"/>
                                 </connections>
                             </button>
@@ -138,7 +138,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="lhS-jc-u5i"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="mRI-fc-kYa"/>
                                     <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="HbI-ai-wqv"/>
                                 </connections>
                             </button>
@@ -162,7 +162,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="dLY-7h-E4e"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="mii-6v-5rG"/>
                                     <action selector="signPressed:" destination="2" eventType="touchUpInside" id="fF6-DJ-FnF"/>
                                 </connections>
                             </button>
@@ -186,7 +186,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="E5M-gh-0d4"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="TuR-qy-0fm"/>
                                     <action selector="clearPressed:" destination="2" eventType="touchUpInside" id="e8k-Sj-VNA"/>
                                 </connections>
                             </button>
@@ -210,7 +210,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="xEd-jW-7yi"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="99c-h8-8tf"/>
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="uNH-c9-FQ6"/>
                                 </connections>
                             </button>
@@ -234,7 +234,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="Nek-ll-c08"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="Rqy-t4-t2X"/>
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ARd-Fq-nAV"/>
                                 </connections>
                             </button>
@@ -258,7 +258,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="BdP-AD-o3j"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="M9m-fU-78a"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="Zx6-Cd-IaL"/>
                                 </connections>
                             </button>
@@ -282,7 +282,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="rd8-zJ-Lpj"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="Tcv-K5-EW0"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="j8V-bT-FWS"/>
                                 </connections>
                             </button>
@@ -306,7 +306,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="vAC-Sn-AKO"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="HBv-lT-2sg"/>
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="XPW-Rv-v0B"/>
                                 </connections>
                             </button>
@@ -330,7 +330,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="w3a-YK-F4y"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="6Dc-UP-Dhg"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="0m1-Jc-iaf"/>
                                 </connections>
                             </button>
@@ -354,7 +354,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="fdA-HM-t6w"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="iRF-qf-6dQ"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="kqu-h0-6JA"/>
                                 </connections>
                             </button>
@@ -378,7 +378,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="6Gm-HK-FZc"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="EmY-Ef-txN"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="R2o-CY-vTP"/>
                                 </connections>
                             </button>
@@ -402,7 +402,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="xhn-JH-7aF"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="kcT-vI-uYD"/>
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="a3d-Sm-hiS"/>
                                 </connections>
                             </button>
@@ -426,7 +426,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="bjM-Dv-bzj"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="fAc-IO-M2t"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="NhE-oj-cCG"/>
                                 </connections>
                             </button>
@@ -450,7 +450,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="C0X-gz-dj6"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="wAG-iB-pYs"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="E4m-4b-nWc"/>
                                 </connections>
                             </button>
@@ -474,7 +474,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="oSx-h9-0rr"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="unV-CZ-8me"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="aWr-hb-4l6"/>
                                 </connections>
                             </button>
@@ -498,7 +498,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="aQA-8A-2py"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="bBD-6T-b6p"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="VyJ-pl-zXk"/>
                                 </connections>
                             </button>
@@ -522,7 +522,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="ci7-Wu-6he"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="HVg-Ub-cBK"/>
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="4ey-KQ-oBf"/>
                                 </connections>
                             </button>
@@ -546,7 +546,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="jYg-Yb-vAJ"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="Xbc-fo-qxe"/>
                                     <action selector="enterPressed:" destination="2" eventType="touchUpInside" id="xyb-qB-q8t"/>
                                 </connections>
                             </button>
@@ -570,7 +570,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="2" eventType="touchUpInside" id="NB5-HD-I3C"/>
+                                    <action selector="buttonPressed:" destination="2" eventType="touchDown" id="OI5-C8-fgF"/>
                                     <action selector="decimalPressed:" destination="2" eventType="touchUpInside" id="Od7-Ue-JZc"/>
                                 </connections>
                             </button>
