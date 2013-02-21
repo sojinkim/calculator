@@ -43,11 +43,11 @@
                                     <constraint firstItem="NPu-Jc-ZVG" firstAttribute="leading" secondItem="JLC-Bf-MJx" secondAttribute="leading" type="default" id="rOE-jM-nQm"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbW-20-kf9">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="p5r-Gk-5b9"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="puV-Ah-AR9"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="puV-Ah-AR9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="M+">
@@ -67,10 +67,10 @@
                                     <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="aXL-Xl-Y18"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Kw-h1n">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="deR-Fv-0cf"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="deR-Fv-0cf"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" type="user" id="q9b-wD-Ru9"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="wXj-H2-hSa"/>
                                 </constraints>
@@ -92,10 +92,10 @@
                                     <action selector="memClearPressed:" destination="2" eventType="touchUpInside" id="WBi-ze-Y2a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-yI-IM6">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="Aqj-Rd-Thl"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="Aqj-Rd-Thl"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="N8o-n0-abN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" type="user" id="lIA-Lx-YU4"/>
                                 </constraints>
@@ -117,11 +117,11 @@
                                     <action selector="memRecallPressed:" destination="2" eventType="touchUpInside" id="vtk-5l-4wh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebq-cT-5jO">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Moo-d1-uFV"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="hwa-pr-KnD"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="hwa-pr-KnD"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66" type="user" id="iNc-ii-xol"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
@@ -142,10 +142,10 @@
                                     <action selector="memoryFuntionPressed:" destination="2" eventType="touchUpInside" id="HbI-ai-wqv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voS-6k-Pac">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voS-6k-Pac">
+                                <color key="backgroundColor" red="0.090196080509999998" green="0.61960786580000005" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="abY-xR-5WJ"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="abY-xR-5WJ"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="bbc-qp-2FV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
@@ -166,11 +166,11 @@
                                     <action selector="signPressed:" destination="2" eventType="touchUpInside" id="fF6-DJ-FnF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97s-La-8KQ">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97s-La-8KQ">
+                                <color key="backgroundColor" red="0.090196080505847931" green="0.61960786581039429" blue="0.68235296010971069" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Lg3-ZQ-60e"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="rNE-tU-gb0"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="rNE-tU-gb0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="C">
@@ -190,11 +190,11 @@
                                     <action selector="clearPressed:" destination="2" eventType="touchUpInside" id="e8k-Sj-VNA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-hf-rCo">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYV-hf-rCo">
+                                <color key="backgroundColor" red="0.090196080509999998" green="0.61960786580000005" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="rpr-Yq-PjK"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="uTd-I9-y5s"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="uTd-I9-y5s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="×">
@@ -214,10 +214,10 @@
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="uNH-c9-FQ6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAX-NE-dCs">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAX-NE-dCs">
+                                <color key="backgroundColor" red="0.090196080509999998" green="0.61960786580000005" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="XYS-5T-DeF"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="XYS-5T-DeF"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="luZ-tL-Gt7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
@@ -238,13 +238,13 @@
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="ARd-Fq-nAV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-ox-cAb">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eA-ox-cAb">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="Wn5-MW-MR6"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="Wn5-MW-MR6"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Zyz-bl-fTX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -262,13 +262,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="Zx6-Cd-IaL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h49-OC-t8x">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h49-OC-t8x">
+                                <color key="backgroundColor" red="0.69803923368453979" green="0.20000001788139346" blue="0.92549026012420654" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="CBW-ma-5jM"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="CBW-ma-5jM"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="fIx-6O-zY6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -286,11 +286,11 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="j8V-bT-FWS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-FV-ez4">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-FV-ez4">
+                                <color key="backgroundColor" red="0.090196080509999998" green="0.61960786580000005" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="2yS-ty-Bzt"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="Zom-8u-f2b"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="Zom-8u-f2b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="-">
@@ -310,13 +310,13 @@
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="XPW-Rv-v0B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9K6-5N-hnm">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9K6-5N-hnm">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="8XC-yy-zKw"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="8XC-yy-zKw"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="DA0-rT-dEM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,13 +334,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="0m1-Jc-iaf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifv-IR-tiQ">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifv-IR-tiQ">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Hfx-7y-3xs"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="mze-x7-XuL"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="mze-x7-XuL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,13 +358,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="kqu-h0-6JA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-Dz-qsv">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBo-Dz-qsv">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="DPR-Ps-CKR"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="DPR-Ps-CKR"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="HHf-jR-yrC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -382,10 +382,10 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="R2o-CY-vTP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-3Y-Mnw">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gog-3Y-Mnw">
+                                <color key="backgroundColor" red="0.090196080509999998" green="0.61960786580000005" blue="0.68235296010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="4De-BV-zFo"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="4De-BV-zFo"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="vYe-OB-Dfo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
@@ -406,13 +406,13 @@
                                     <action selector="operatorPressed:" destination="2" eventType="touchUpInside" id="a3d-Sm-hiS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-9U-Gwg">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-9U-Gwg">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="0zW-8k-rKk"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="kLF-fj-PUE"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="kLF-fj-PUE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -430,13 +430,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="NhE-oj-cCG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znk-56-ukd">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znk-56-ukd">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="9tV-u3-n3H"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="ICq-Aw-mOC"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="ICq-Aw-mOC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,13 +454,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="E4m-4b-nWc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1o-Py-htZ">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1o-Py-htZ">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="Nsd-me-T2m"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="Nsd-me-T2m"/>
                                     <constraint firstAttribute="width" constant="66" type="user" id="YuN-Iq-9Vb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -478,13 +478,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="aWr-hb-4l6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKm-TE-Ve3">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKm-TE-Ve3">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="JTB-3h-LOY"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="wKf-62-JGW"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="wKf-62-JGW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -502,13 +502,13 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="VyJ-pl-zXk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-Hs-ffX">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mrn-Hs-ffX">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" type="user" id="bHE-to-m0x"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="pjS-eU-ZH1"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="pjS-eU-ZH1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -526,11 +526,11 @@
                                     <action selector="digitPressed:" destination="2" eventType="touchUpInside" id="4ey-KQ-oBf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJq-ha-PDy">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJq-ha-PDy">
+                                <color key="backgroundColor" red="0.99607849120000003" green="0.46666669849999998" blue="0.0078461377189999997" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Syr-68-MWk"/>
-                                    <constraint firstAttribute="height" constant="94" type="user" id="iRq-Z5-GrT"/>
+                                    <constraint firstAttribute="height" constant="100" type="user" id="iRq-Z5-GrT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <state key="normal" title="=">
@@ -550,13 +550,13 @@
                                     <action selector="enterPressed:" destination="2" eventType="touchUpInside" id="xyb-qB-q8t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-de-spT">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zjk-de-spT">
+                                <color key="backgroundColor" red="0.69803923369999998" green="0.20000001789999999" blue="0.92549026010000002" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" type="user" id="Nok-ty-rnd"/>
-                                    <constraint firstAttribute="height" constant="43" type="user" id="P2x-qd-Bf3"/>
+                                    <constraint firstAttribute="height" constant="46" type="user" id="P2x-qd-Bf3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
                                 <state key="normal" title=".">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -575,15 +575,16 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3eA-ox-cAb" firstAttribute="leading" secondItem="voS-6k-Pac" secondAttribute="leading" type="default" id="1fr-cC-hTh"/>
                             <constraint firstItem="9K6-5N-hnm" firstAttribute="baseline" secondItem="3eA-ox-cAb" secondAttribute="baseline" type="default" id="3IR-Z7-AAB"/>
                             <constraint firstItem="Zjk-de-spT" firstAttribute="top" secondItem="fKm-TE-Ve3" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="3Rd-Dn-Oci"/>
-                            <constraint firstItem="oBo-Dz-qsv" firstAttribute="top" secondItem="h49-OC-t8x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="63V-60-xmA"/>
+                            <constraint firstItem="4hD-Kw-h1n" firstAttribute="baseline" secondItem="Ebq-cT-5jO" secondAttribute="baseline" type="default" id="3wf-VJ-Odl"/>
+                            <constraint firstItem="9K6-5N-hnm" firstAttribute="top" secondItem="eAX-NE-dCs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="4lX-qq-PMk"/>
+                            <constraint firstItem="4hD-Kw-h1n" firstAttribute="top" secondItem="cQi-gG-1fe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7Rb-ce-j31"/>
                             <constraint firstItem="jJq-ha-PDy" firstAttribute="top" secondItem="fKm-TE-Ve3" secondAttribute="top" type="user" id="83q-VK-E4u"/>
                             <constraint firstItem="K1o-Py-htZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="8Rh-14-Jqv"/>
-                            <constraint firstItem="wbW-20-kf9" firstAttribute="top" secondItem="cQi-gG-1fe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8rK-oo-akx"/>
                             <constraint firstItem="oBo-Dz-qsv" firstAttribute="baseline" secondItem="ifv-IR-tiQ" secondAttribute="baseline" type="default" id="9YX-Ee-c5Q"/>
                             <constraint firstItem="3eA-ox-cAb" firstAttribute="leading" secondItem="ifv-IR-tiQ" secondAttribute="leading" type="default" id="AG7-n7-Z5i"/>
                             <constraint firstItem="h49-OC-t8x" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="Bvp-he-R8q"/>
@@ -591,27 +592,33 @@
                             <constraint firstItem="97s-La-8KQ" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="CMu-q1-KuJ"/>
                             <constraint firstItem="wbW-20-kf9" firstAttribute="leading" secondItem="voS-6k-Pac" secondAttribute="leading" type="default" id="DTA-nF-FYQ"/>
                             <constraint firstItem="Ebq-cT-5jO" firstAttribute="baseline" secondItem="qKy-yI-IM6" secondAttribute="baseline" type="default" id="Dnf-H3-8x1"/>
-                            <constraint firstItem="Ebq-cT-5jO" firstAttribute="top" secondItem="cQi-gG-1fe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Em0-Pw-G2T"/>
+                            <constraint firstItem="jJq-ha-PDy" firstAttribute="top" secondItem="Gog-3Y-Mnw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="EQt-hs-7Jh"/>
                             <constraint firstItem="4hD-Kw-h1n" firstAttribute="baseline" secondItem="wbW-20-kf9" secondAttribute="baseline" type="default" id="Gd6-eS-azT"/>
                             <constraint firstItem="hgM-9U-Gwg" firstAttribute="baseline" secondItem="ifv-IR-tiQ" secondAttribute="baseline" type="default" id="HEZ-dO-m9Y"/>
                             <constraint firstItem="znk-56-ukd" firstAttribute="trailing" secondItem="Mrn-Hs-ffX" secondAttribute="trailing" type="default" id="I4g-3f-uFj"/>
                             <constraint firstItem="cQi-gG-1fe" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="user" id="JlZ-FK-BgM"/>
                             <constraint firstItem="fKm-TE-Ve3" firstAttribute="leading" secondItem="hgM-9U-Gwg" secondAttribute="leading" type="default" id="Jm3-yD-zkV"/>
                             <constraint firstAttribute="trailing" secondItem="Ebq-cT-5jO" secondAttribute="trailing" constant="91" id="KJf-bg-9Is"/>
+                            <constraint firstItem="ifv-IR-tiQ" firstAttribute="top" secondItem="3eA-ox-cAb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KgO-yh-gfk"/>
                             <constraint firstItem="9K6-5N-hnm" firstAttribute="leading" secondItem="hgM-9U-Gwg" secondAttribute="leading" type="default" id="Kpc-gY-02r"/>
-                            <constraint firstItem="4hD-Kw-h1n" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="M2m-ff-Fxc"/>
+                            <constraint firstItem="Gog-3Y-Mnw" firstAttribute="top" secondItem="gLr-FV-ez4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MPM-58-jNQ"/>
+                            <constraint firstItem="hgM-9U-Gwg" firstAttribute="top" secondItem="9K6-5N-hnm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="P0s-OQ-os6"/>
                             <constraint firstItem="znk-56-ukd" firstAttribute="baseline" secondItem="K1o-Py-htZ" secondAttribute="baseline" type="default" id="PAh-ns-djv"/>
                             <constraint firstAttribute="trailing" secondItem="gLr-FV-ez4" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uyi-V7-d5g"/>
                             <constraint firstItem="Ebq-cT-5jO" firstAttribute="leading" secondItem="eAX-NE-dCs" secondAttribute="leading" type="default" id="VXW-zG-hnV"/>
                             <constraint firstItem="K1o-Py-htZ" firstAttribute="trailing" secondItem="oBo-Dz-qsv" secondAttribute="trailing" type="user" id="VnH-17-rcT"/>
+                            <constraint firstItem="fKm-TE-Ve3" firstAttribute="top" secondItem="hgM-9U-Gwg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WEv-AT-d9z"/>
                             <constraint firstItem="fKm-TE-Ve3" firstAttribute="baseline" secondItem="znk-56-ukd" secondAttribute="baseline" type="default" id="X0i-NE-GE0"/>
                             <constraint firstItem="97s-La-8KQ" firstAttribute="top" secondItem="4hD-Kw-h1n" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YuN-Fh-ICw"/>
                             <constraint firstAttribute="trailing" secondItem="bYV-hf-rCo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZXz-3T-xej"/>
                             <constraint firstItem="eAX-NE-dCs" firstAttribute="leading" secondItem="9K6-5N-hnm" secondAttribute="leading" type="default" id="aBa-JQ-bR4"/>
                             <constraint firstItem="voS-6k-Pac" firstAttribute="baseline" secondItem="97s-La-8KQ" secondAttribute="baseline" type="default" id="bKJ-Fg-9Gs"/>
-                            <constraint firstItem="Zjk-de-spT" firstAttribute="bottom" secondItem="jJq-ha-PDy" secondAttribute="bottom" type="user" id="bLl-mR-43N"/>
+                            <constraint firstItem="Zjk-de-spT" firstAttribute="bottom" secondItem="jJq-ha-PDy" secondAttribute="bottom" type="user" id="bLl-mR-46N"/>
+                            <constraint firstItem="3eA-ox-cAb" firstAttribute="top" secondItem="voS-6k-Pac" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ceF-BA-5Vb"/>
                             <constraint firstItem="znk-56-ukd" firstAttribute="leading" secondItem="ifv-IR-tiQ" secondAttribute="leading" type="default" id="eFp-U5-chg"/>
+                            <constraint firstItem="3eA-ox-cAb" firstAttribute="top" secondItem="9K6-5N-hnm" secondAttribute="top" type="default" id="fpD-Da-K0q"/>
                             <constraint firstItem="Gog-3Y-Mnw" firstAttribute="baseline" secondItem="hgM-9U-Gwg" secondAttribute="baseline" type="default" id="iXH-33-OOV"/>
+                            <constraint firstItem="4hD-Kw-h1n" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jNu-4W-gVn"/>
                             <constraint firstItem="gLr-FV-ez4" firstAttribute="baseline" secondItem="9K6-5N-hnm" secondAttribute="baseline" type="default" id="jPh-FH-y9k"/>
                             <constraint firstItem="h49-OC-t8x" firstAttribute="baseline" secondItem="3eA-ox-cAb" secondAttribute="baseline" type="default" id="kNK-5a-2e7"/>
                             <constraint firstAttribute="trailing" secondItem="qKy-yI-IM6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lt8-C7-VDt"/>
@@ -619,6 +626,7 @@
                             <constraint firstItem="bYV-hf-rCo" firstAttribute="baseline" secondItem="eAX-NE-dCs" secondAttribute="baseline" type="default" id="ocM-64-VyB"/>
                             <constraint firstAttribute="trailing" secondItem="cQi-gG-1fe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pUj-BQ-NCZ"/>
                             <constraint firstAttribute="trailing" secondItem="Gog-3Y-Mnw" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rbW-CN-gOp"/>
+                            <constraint firstItem="znk-56-ukd" firstAttribute="top" secondItem="ifv-IR-tiQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uHg-VG-COD"/>
                             <constraint firstItem="Mrn-Hs-ffX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uQp-nf-Vae"/>
                             <constraint firstItem="h49-OC-t8x" firstAttribute="top" secondItem="97s-La-8KQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vcb-Rx-6QM"/>
                             <constraint firstItem="oBo-Dz-qsv" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="w0y-iN-RKo"/>

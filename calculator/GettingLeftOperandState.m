@@ -86,6 +86,7 @@
 - (brainState)processMemRecall
 {
     isMemRecalled = YES;
+    isDecimalPressed = NO;
     self.brain.inputString = [NSString stringWithFormat:@"%g", self.brain.memoryStore];
     return brainState_self;
 }

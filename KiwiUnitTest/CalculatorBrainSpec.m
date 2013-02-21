@@ -148,6 +148,28 @@ describe(@"CalculatorBrainSpec", ^{
             [[theValue(myBrain.calculationResult) should] equal:theValue(0)];
             [[theValue(myBrain.currentState) should] equal:theValue(brainState_init)];
         });
+        
+        it(@"input stream : 9 . memRecall 3 . : memRecall should clear left operand decimal flag", ^{
+            [myBrain processDigit:9];
+            [myBrain processDecimal];
+            [myBrain processMemRecall];
+            [myBrain processDigit:3];
+            [myBrain processDecimal];
+            [[myBrain.inputString should] equal:@"3."];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
+        });
+        
+        it(@"input stream : 3 + 9 . memRecall 3 . : memRecall should clear right operand decimal flag", ^{
+            [myBrain processDigit:3];
+            [myBrain processOperator:add];
+            [myBrain processDigit:9];
+            [myBrain processDecimal];
+            [myBrain processMemRecall];
+            [myBrain processDigit:3];
+            [myBrain processDecimal];
+            [[myBrain.inputString should] equal:@"3."];
+            [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
+        });
     });
 });
 
