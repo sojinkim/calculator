@@ -7,7 +7,7 @@
 //
 
 #import "InitialState.h"
-#import "CalculatorBrain.h"
+#import "CalculatorBrain+State.h"
 #import "OperatorUtil.h"
 
 @interface InitialState()

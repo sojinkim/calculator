@@ -12,7 +12,14 @@
 #import "GettingLeftOperandState.h"
 #import "GettingRightOperandState.h"
 
-@interface CalculatorBrain () 
+@interface CalculatorBrain ()
+
+@property (nonatomic, strong) NSString *inputString;
+@property (nonatomic) double leftOperand;
+@property (nonatomic) operatorType operatorString;
+@property (nonatomic) double rightOperand;
+@property (nonatomic) double calculationResult;
+@property (nonatomic) double memoryStore;
 
 @property (nonatomic) BrainState *state;
 @property (nonatomic, strong) InitialState *initialState;
@@ -23,14 +30,6 @@
 @end
 
 @implementation CalculatorBrain 
-- (NSString *)inputString
-{
-    if (!_inputString) {
-        _inputString = [[NSString alloc] init];
-        NSLog(@"input string allocation");
-    }
-    return _inputString;
-}
 
 - (brainState)currentState
 {
@@ -63,17 +62,21 @@
     return YES;
 }
 
-- (void)initialize
+- (id)init
 {
-    if (!self.state) {
+    self = [super init];
+    
+    if (self) {
         self.initialState = [InitialState brainStateOfBrain:self];
         self.gettingOperatorState = [GettingOperatorState brainStateOfBrain:self];
         self.gettingLeftOperandState = [GettingLeftOperandState brainStateOfBrain:self];
         self.gettingRightOperandState = [GettingRightOperandState brainStateOfBrain:self];
+        
+        self.state = self.initialState;
+        self.inputString = @"0";
     }
 
-    self.state = self.initialState;
-    self.inputString = @"0";
+    return self;
 }
 
 - (void)dropCurrentCalculation
@@ -135,33 +138,5 @@
 {
     while ( [self moveToNewState:[self.state processDecimal]] );
 }
-
-- (double)performOperation
-{
-    if (add == self.operatorString) {
-        self.calculationResult = self.leftOperand + self.rightOperand;
-    } else if (sub == self.operatorString) {
-        self.calculationResult = self.leftOperand - self.rightOperand;
-    } else if (multiply == self.operatorString) {
-        self.calculationResult = self.leftOperand * self.rightOperand;
-    } else if (divide == self.operatorString) {
-        self.calculationResult = self.leftOperand / self.rightOperand;
-    } else {NSAssert(NO, @"not supported arithmetic operator"); }
-    
-    return self.calculationResult;
-}
-
-- (void)manipulateInputStringForSignChange
-{
-    NSRange range = {0 , 1};
-    
-    if ( [self.inputString hasPrefix:@"-"] ) {
-        self.inputString = [self.inputString stringByReplacingCharactersInRange:range withString:@""];
-    }
-    else {
-        self.inputString = [@"-" stringByAppendingString:self.inputString];
-    }
-}
-
 
 @end

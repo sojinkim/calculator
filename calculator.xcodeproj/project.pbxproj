@@ -12,6 +12,7 @@
 		55271F6416BAA724007F6428 /* GettingLeftOperandState.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6316BAA723007F6428 /* GettingLeftOperandState.m */; };
 		55271F6716BAA7D2007F6428 /* GettingRightOperandState.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */; };
 		55271F6A16BAB1BE007F6428 /* OperatorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55271F6916BAB1BE007F6428 /* OperatorUtil.m */; };
+		55433B9716D9D47A0092E919 /* CalculatorBrain+State.m in Sources */ = {isa = PBXBuildFile; fileRef = 55433B9616D9D47A0092E919 /* CalculatorBrain+State.m */; };
 		5582028B16B815E2007522B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028A16B815E2007522B4 /* UIKit.framework */; };
 		5582028D16B815E2007522B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028C16B815E2007522B4 /* Foundation.framework */; };
 		5582028F16B815E2007522B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5582028E16B815E2007522B4 /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		55271F6616BAA7D2007F6428 /* GettingRightOperandState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GettingRightOperandState.m; sourceTree = "<group>"; };
 		55271F6816BAB1BE007F6428 /* OperatorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorUtil.h; sourceTree = "<group>"; };
 		55271F6916BAB1BE007F6428 /* OperatorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorUtil.m; sourceTree = "<group>"; };
+		55433B9516D9D47A0092E919 /* CalculatorBrain+State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalculatorBrain+State.h"; sourceTree = "<group>"; };
+		55433B9616D9D47A0092E919 /* CalculatorBrain+State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalculatorBrain+State.m"; sourceTree = "<group>"; };
 		5582028716B815E2007522B4 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5582028A16B815E2007522B4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5582028C16B815E2007522B4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 				5591D4D616B9828600CD32EF /* BrainState.m */,
 				5591D4D716B9828600CD32EF /* CalculatorBrain.h */,
 				5591D4D816B9828600CD32EF /* CalculatorBrain.m */,
+				55433B9516D9D47A0092E919 /* CalculatorBrain+State.h */,
+				55433B9616D9D47A0092E919 /* CalculatorBrain+State.m */,
 				55271F6216BAA723007F6428 /* GettingLeftOperandState.h */,
 				55271F6316BAA723007F6428 /* GettingLeftOperandState.m */,
 				55271F5F16BAA6C5007F6428 /* GettingOperatorState.h */,
@@ -382,6 +387,7 @@
 				55271F6416BAA724007F6428 /* GettingLeftOperandState.m in Sources */,
 				55271F6716BAA7D2007F6428 /* GettingRightOperandState.m in Sources */,
 				55271F6A16BAB1BE007F6428 /* OperatorUtil.m in Sources */,
+				55433B9716D9D47A0092E919 /* CalculatorBrain+State.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

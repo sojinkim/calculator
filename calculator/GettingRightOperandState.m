@@ -7,7 +7,7 @@
 //
 
 #import "GettingRightOperandState.h"
-#import "CalculatorBrain.h"
+#import "CalculatorBrain+State.h"
 #import "OperatorUtil.h"
 
 @interface GettingRightOperandState() {

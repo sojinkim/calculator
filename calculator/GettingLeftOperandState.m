@@ -7,7 +7,7 @@
 //
 
 #import "GettingLeftOperandState.h"
-#import "CalculatorBrain.h"
+#import "CalculatorBrain+State.h"
 #import "OperatorUtil.h"
 
 @interface GettingLeftOperandState() {
@@ -54,7 +54,6 @@
         [self pushMemRecallValueToOperand];
     }
     
-    [self cleanBeforeLeave];
     return brainState_op;
 }
 

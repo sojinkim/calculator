@@ -62,21 +62,17 @@
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = bgLayer.bounds;
     
-    gradientLayer.colors = [NSArray arrayWithObjects:
-                            (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
+    gradientLayer.colors = @[(id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
                             (id)[UIColor colorWithWhite:1.0f alpha:0.5f].CGColor,
                             (id)[UIColor colorWithWhite:1.0f alpha:0.2f].CGColor,
                             (id)[UIColor colorWithWhite:0.8f alpha:0.1f].CGColor,
-                            (id)[UIColor colorWithWhite:0.9f alpha:0.1f].CGColor,
-                            nil];
+                            (id)[UIColor colorWithWhite:0.9f alpha:0.1f].CGColor];
     
-    gradientLayer.locations = [NSArray arrayWithObjects:
-                               (id)[NSNumber numberWithFloat:0.0f],
-                               (id)[NSNumber numberWithFloat:0.2f],
-                               (id)[NSNumber numberWithFloat:0.6f],
-                               (id)[NSNumber numberWithFloat:0.8f],
-                               (id)[NSNumber numberWithFloat:0.9f],
-                               nil];
+    gradientLayer.locations = @[(id)@0.0f,
+                               (id)@0.2f,
+                               (id)@0.6f,
+                               (id)@0.8f,
+                               (id)@0.9f];
     [bgLayer insertSublayer:gradientLayer atIndex:0];
 }
 
@@ -90,7 +86,6 @@
 {
     if (!_brain) {
         _brain = [[CalculatorBrain alloc] init];
-        [_brain initialize];
     }
 
     return _brain;
@@ -158,7 +153,6 @@
 
 - (IBAction)memClearPressed:(UIButton *)sender {
     [self.brain processMemClear];
-    //self.buttonMr.layer.borderColor = [UIColor colorWithWhite:0.2f alpha:0.8f].CGColor;
     self.buttonMr.layer.borderWidth = 0.0f;
 }
 

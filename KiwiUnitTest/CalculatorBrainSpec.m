@@ -9,7 +9,6 @@ describe(@"CalculatorBrainSpec", ^{
 
         beforeEach(^{
             myBrain = [[CalculatorBrain alloc] init];
-            [myBrain initialize];
         });
 
         afterEach(^{

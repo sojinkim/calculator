@@ -12,15 +12,14 @@
 
 @interface CalculatorBrain : NSObject
 
-@property (nonatomic, strong) NSString *inputString;
-@property (nonatomic) double leftOperand;
-@property (nonatomic) operatorType operatorString;
-@property (nonatomic) double rightOperand;
-@property (nonatomic) double calculationResult;
-@property (nonatomic) double memoryStore;
+@property (nonatomic, strong, readonly) NSString *inputString;
+@property (nonatomic, readonly) double leftOperand;
+@property (nonatomic, readonly) operatorType operatorString;
+@property (nonatomic, readonly) double rightOperand;
+@property (nonatomic, readonly) double calculationResult;
+@property (nonatomic, readonly) double memoryStore;
 
-
-- (void)initialize;
+- (id)init;
 - (void)dropCurrentCalculation;
 
 - (void)processDigit:(int)digit;
@@ -33,8 +32,5 @@
 - (void)processDecimal;
 
 - (brainState)currentState;
-
-- (double)performOperation;  
-- (void)manipulateInputStringForSignChange;
 
 @end
