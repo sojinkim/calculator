@@ -7,7 +7,8 @@
 //
 
 #import "GettingOperatorState.h"
-#import "CalculatorBrain+State.h"
+#import "CalculatorBrain.h"
+#import "CalculatorBrain_Private.h"
 
 
 @interface GettingOperatorState()

@@ -7,27 +7,7 @@
 //
 
 #import "CalculatorBrain.h"
-#import "InitialState.h"
-#import "GettingOperatorState.h"
-#import "GettingLeftOperandState.h"
-#import "GettingRightOperandState.h"
-
-@interface CalculatorBrain ()
-
-@property (nonatomic, strong) NSString *inputStringForOperand;
-@property (nonatomic) double leftOperand;
-@property (nonatomic) basicArithmeticOperator operatorType;
-@property (nonatomic) double rightOperand;
-@property (nonatomic) double calculationResult;
-@property (nonatomic) double memoryStore;
-
-@property (nonatomic) BrainState *state;
-@property (nonatomic, strong) InitialState *initialState;
-@property (nonatomic, strong) GettingOperatorState *operatorState;
-@property (nonatomic, strong) GettingLeftOperandState *leftOperandState;
-@property (nonatomic, strong) GettingRightOperandState *rightOperandState;
-
-@end
+#import "CalculatorBrain_Private.h"
 
 @implementation CalculatorBrain 
 
@@ -137,6 +117,33 @@
 - (void)processDecimal
 {
     while ( [self moveToNewState:[self.state processDecimal]] );
+}
+
+- (double)performOperation
+{
+    if (add == self.operatorType) {
+        self.calculationResult = self.leftOperand + self.rightOperand;
+    } else if (sub == self.operatorType) {
+        self.calculationResult = self.leftOperand - self.rightOperand;
+    } else if (multiply == self.operatorType) {
+        self.calculationResult = self.leftOperand * self.rightOperand;
+    } else if (divide == self.operatorType) {
+        self.calculationResult = self.leftOperand / self.rightOperand;
+    } else {NSAssert(NO, @"not supported arithmetic operator"); }
+    
+    return self.calculationResult;
+}
+
+- (void)manipulateInputStringForSignChange
+{
+    NSRange range = {0 , 1};
+    
+    if ( [self.inputStringForOperand hasPrefix:@"-"] ) {
+        self.inputStringForOperand = [self.inputStringForOperand stringByReplacingCharactersInRange:range withString:@""];
+    }
+    else {
+        self.inputStringForOperand = [@"-" stringByAppendingString:self.inputStringForOperand];
+    }
 }
 
 @end

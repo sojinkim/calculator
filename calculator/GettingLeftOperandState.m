@@ -7,7 +7,8 @@
 //
 
 #import "GettingLeftOperandState.h"
-#import "CalculatorBrain+State.h"
+#import "CalculatorBrain.h"
+#import "CalculatorBrain_Private.h"
 #import "OperatorUtil.h"
 
 @interface GettingLeftOperandState() {
