@@ -14,18 +14,18 @@
 
 @interface CalculatorBrain ()
 
-@property (nonatomic, strong) NSString *inputString;
+@property (nonatomic, strong) NSString *inputStringForOperand;
 @property (nonatomic) double leftOperand;
-@property (nonatomic) operatorType operatorString;
+@property (nonatomic) basicArithmeticOperator operatorType;
 @property (nonatomic) double rightOperand;
 @property (nonatomic) double calculationResult;
 @property (nonatomic) double memoryStore;
 
 @property (nonatomic) BrainState *state;
 @property (nonatomic, strong) InitialState *initialState;
-@property (nonatomic, strong) GettingOperatorState *gettingOperatorState;
-@property (nonatomic, strong) GettingLeftOperandState *gettingLeftOperandState;
-@property (nonatomic, strong) GettingRightOperandState *gettingRightOperandState;
+@property (nonatomic, strong) GettingOperatorState *operatorState;
+@property (nonatomic, strong) GettingLeftOperandState *leftOperandState;
+@property (nonatomic, strong) GettingRightOperandState *rightOperandState;
 
 @end
 
@@ -48,13 +48,13 @@
             self.state = self.initialState;
             break;
         case brainState_left:
-            self.state = self.gettingLeftOperandState;
+            self.state = self.leftOperandState;
             break;
         case brainState_op:
-            self.state = self.gettingOperatorState;
+            self.state = self.operatorState;
             break;
         case brainState_right:
-            self.state = self.gettingRightOperandState;
+            self.state = self.rightOperandState;
             break;
         default:
             NSAssert(NO, @"No such BrainState");
@@ -68,12 +68,12 @@
     
     if (self) {
         self.initialState = [InitialState brainStateOfBrain:self];
-        self.gettingOperatorState = [GettingOperatorState brainStateOfBrain:self];
-        self.gettingLeftOperandState = [GettingLeftOperandState brainStateOfBrain:self];
-        self.gettingRightOperandState = [GettingRightOperandState brainStateOfBrain:self];
+        self.operatorState = [GettingOperatorState brainStateOfBrain:self];
+        self.leftOperandState = [GettingLeftOperandState brainStateOfBrain:self];
+        self.rightOperandState = [GettingRightOperandState brainStateOfBrain:self];
         
         self.state = self.initialState;
-        self.inputString = @"0";
+        self.inputStringForOperand = @"0";
     }
 
     return self;
@@ -81,9 +81,9 @@
 
 - (void)dropCurrentCalculation
 {
-    self.inputString = @"0";
+    self.inputStringForOperand = @"0";
     self.leftOperand = self.rightOperand = 0;
-    self.operatorString = invalid;
+    self.operatorType = invalid;
     self.calculationResult = 0;
     [self moveToNewState:brainState_init];
 }

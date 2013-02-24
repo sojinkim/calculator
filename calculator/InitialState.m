@@ -28,7 +28,7 @@
     return brainState_init;
 }
 
-- (brainState)processOperator:(operatorType)op
+- (brainState)processOperator:(basicArithmeticOperator)op
 {
     self.brain.leftOperand = self.brain.calculationResult;
     return brainState_left;

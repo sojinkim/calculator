@@ -12,9 +12,9 @@
 
 @interface CalculatorBrain : NSObject
 
-@property (nonatomic, strong, readonly) NSString *inputString;
+@property (nonatomic, strong, readonly) NSString *inputStringForOperand;
 @property (nonatomic, readonly) double leftOperand;
-@property (nonatomic, readonly) operatorType operatorString;
+@property (nonatomic, readonly) basicArithmeticOperator operatorType;
 @property (nonatomic, readonly) double rightOperand;
 @property (nonatomic, readonly) double calculationResult;
 @property (nonatomic, readonly) double memoryStore;

@@ -66,11 +66,11 @@ describe(@"CalculatorBrainSpec", ^{
             [myBrain processDecimal];
             [myBrain processDigit:1];
             [[theValue(myBrain.leftOperand) should] equal:theValue(0.111)];
-            [[myBrain.inputString should] equal:@"0.111"];
+            [[myBrain.inputStringForOperand should] equal:@"0.111"];
             
             [myBrain processOperator:add];
             [myBrain processOperator:sub];
-            [[theValue(myBrain.operatorString) should] equal:theValue(sub)];
+            [[theValue(myBrain.operatorType) should] equal:theValue(sub)];
             
             [myBrain processDecimal];
             [myBrain processDigit:3];
@@ -80,34 +80,34 @@ describe(@"CalculatorBrainSpec", ^{
             [myBrain processSign];
             [myBrain processSign];
             [[theValue(myBrain.rightOperand) should] equal:theValue(-0.34)];
-            [[myBrain.inputString should] equal:@"-0.34"];
+            [[myBrain.inputStringForOperand should] equal:@"-0.34"];
             
             [myBrain processEnter];
             [[theValue(myBrain.calculationResult) should] equal:theValue(0.451)];
             [[theValue(myBrain.leftOperand) should] equal:theValue(0)];
-            [[myBrain.inputString should] equal:@"0"];
-            [[theValue(myBrain.operatorString) should] equal:theValue(invalid)];
+            [[myBrain.inputStringForOperand should] equal:@"0"];
+            [[theValue(myBrain.operatorType) should] equal:theValue(invalid)];
             [[theValue(myBrain.rightOperand) should] equal:theValue(0)];
-            [[myBrain.inputString should] equal:@"0"];
+            [[myBrain.inputStringForOperand should] equal:@"0"];
         });
         
         it(@"input stream : 9 + 3 - enter sign 4 enter", ^{
             
             [myBrain processDigit:9];
             [[theValue(myBrain.leftOperand) should] equal:theValue(9)];
-            [[myBrain.inputString should] equal:@"9"];
+            [[myBrain.inputStringForOperand should] equal:@"9"];
             
             [myBrain processOperator:add];
-            [[theValue(myBrain.operatorString) should] equal:theValue(add)];
+            [[theValue(myBrain.operatorType) should] equal:theValue(add)];
             
             [myBrain processDigit:3];
             [[theValue(myBrain.rightOperand) should] equal:theValue(3)];
-            [[myBrain.inputString should] equal:@"3"];
+            [[myBrain.inputStringForOperand should] equal:@"3"];
             
             [myBrain processOperator:sub];
             [[theValue(myBrain.calculationResult) should] equal:theValue(0)];
             [[theValue(myBrain.leftOperand) should] equal:theValue(12)];
-            [[theValue(myBrain.operatorString) should] equal:theValue(sub)];
+            [[theValue(myBrain.operatorType) should] equal:theValue(sub)];
             
             [myBrain processEnter];
             [[theValue(myBrain.calculationResult) should] equal:theValue(12)];
@@ -117,7 +117,7 @@ describe(@"CalculatorBrainSpec", ^{
             
             [myBrain processDigit:4];
             [[theValue(myBrain.leftOperand) should] equal:theValue(4)];
-            [[myBrain.inputString should] equal:@"4"];
+            [[myBrain.inputStringForOperand should] equal:@"4"];
             
             [myBrain processEnter];
             [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
@@ -129,7 +129,7 @@ describe(@"CalculatorBrainSpec", ^{
             [myBrain dropCurrentCalculation];
             [myBrain processDigit:2];
             [myBrain processMemRecall];
-            [[myBrain.inputString should] equal:@"9"];
+            [[myBrain.inputStringForOperand should] equal:@"9"];
             
             [myBrain processDigit:3];
             [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
@@ -154,7 +154,7 @@ describe(@"CalculatorBrainSpec", ^{
             [myBrain processMemRecall];
             [myBrain processDigit:3];
             [myBrain processDecimal];
-            [[myBrain.inputString should] equal:@"3."];
+            [[myBrain.inputStringForOperand should] equal:@"3."];
             [[theValue(myBrain.currentState) should] equal:theValue(brainState_left)];
         });
         
@@ -166,7 +166,7 @@ describe(@"CalculatorBrainSpec", ^{
             [myBrain processMemRecall];
             [myBrain processDigit:3];
             [myBrain processDecimal];
-            [[myBrain.inputString should] equal:@"3."];
+            [[myBrain.inputStringForOperand should] equal:@"3."];
             [[theValue(myBrain.currentState) should] equal:theValue(brainState_right)];
         });
     });

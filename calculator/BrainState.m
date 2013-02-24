@@ -25,7 +25,7 @@
     return brainState_self;
 }
 
-- (brainState)processOperator:(operatorType)op
+- (brainState)processOperator:(basicArithmeticOperator)op
 {
     return brainState_self;
 }

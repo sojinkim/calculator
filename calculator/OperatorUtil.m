@@ -10,7 +10,7 @@
 
 @implementation OperatorUtil
 
-+ (NSString *)stringValue:(operatorType)type
++ (NSString *)stringValue:(basicArithmeticOperator)type
 {
     switch (type) {
         case add:

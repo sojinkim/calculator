@@ -19,7 +19,7 @@ typedef enum {
 - (void)cleanBeforeLeave;
 
 - (brainState)processDigit:(int)digit;
-- (brainState)processOperator:(operatorType)op;
+- (brainState)processOperator:(basicArithmeticOperator)op;
 - (brainState)processEnter;
 - (brainState)processSign;
 - (brainState)processDecimal;

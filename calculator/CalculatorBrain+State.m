@@ -10,22 +10,22 @@
 
 @implementation CalculatorBrain (State)
 
-@dynamic inputString;
+@dynamic inputStringForOperand;
 @dynamic leftOperand;
-@dynamic operatorString;
+@dynamic operatorType;
 @dynamic rightOperand;
 @dynamic calculationResult;
 @dynamic memoryStore;
 
 - (double)performOperation
 {
-    if (add == self.operatorString) {
+    if (add == self.operatorType) {
         self.calculationResult = self.leftOperand + self.rightOperand;
-    } else if (sub == self.operatorString) {
+    } else if (sub == self.operatorType) {
         self.calculationResult = self.leftOperand - self.rightOperand;
-    } else if (multiply == self.operatorString) {
+    } else if (multiply == self.operatorType) {
         self.calculationResult = self.leftOperand * self.rightOperand;
-    } else if (divide == self.operatorString) {
+    } else if (divide == self.operatorType) {
         self.calculationResult = self.leftOperand / self.rightOperand;
     } else {NSAssert(NO, @"not supported arithmetic operator"); }
     
@@ -36,11 +36,11 @@
 {
     NSRange range = {0 , 1};
     
-    if ( [self.inputString hasPrefix:@"-"] ) {
-        self.inputString = [self.inputString stringByReplacingCharactersInRange:range withString:@""];
+    if ( [self.inputStringForOperand hasPrefix:@"-"] ) {
+        self.inputStringForOperand = [self.inputStringForOperand stringByReplacingCharactersInRange:range withString:@""];
     }
     else {
-        self.inputString = [@"-" stringByAppendingString:self.inputString];
+        self.inputStringForOperand = [@"-" stringByAppendingString:self.inputStringForOperand];
     }
 }
 

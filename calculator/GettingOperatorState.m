@@ -20,7 +20,7 @@
 {
     GettingOperatorState *brainState = [[self alloc] init];
     brainState.brain = myBrain;
-    brainState.brain.operatorString = invalid;
+    brainState.brain.operatorType = invalid;
     return brainState;
 }
 
@@ -41,7 +41,7 @@
 
 - (brainState)processEnter
 {
-    NSAssert( invalid != self.brain.operatorString , @"operator should not be invliad" );
+    NSAssert( invalid != self.brain.operatorType , @"operator should not be invliad" );
     
     [self.brain performOperation];
     return brainState_right;
@@ -52,9 +52,9 @@
     return brainState_right;
 }
 
-- (brainState)processOperator:(operatorType)op
+- (brainState)processOperator:(basicArithmeticOperator)op
 {
-    self.brain.operatorString = op;
+    self.brain.operatorType = op;
     return brainState_self;
 }
 

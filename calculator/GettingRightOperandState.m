@@ -37,17 +37,17 @@
         [self cancleMemRecall];
     }
     
-    if ( [self.brain.inputString isEqualToString:@"0"] ) {  
-        self.brain.inputString = [NSString stringWithFormat:@"%d", digit];
+    if ( [self.brain.inputStringForOperand isEqualToString:@"0"] ) {  
+        self.brain.inputStringForOperand = [NSString stringWithFormat:@"%d", digit];
     } else {
-        self.brain.inputString = [self.brain.inputString stringByAppendingFormat:@"%d", digit];
+        self.brain.inputStringForOperand = [self.brain.inputStringForOperand stringByAppendingFormat:@"%d", digit];
     }
-    self.brain.rightOperand = [self.brain.inputString doubleValue];
+    self.brain.rightOperand = [self.brain.inputStringForOperand doubleValue];
     
     return brainState_self;
 }
 
-- (brainState)processOperator:(operatorType)op
+- (brainState)processOperator:(basicArithmeticOperator)op
 {
     if (isMemRecalled) {
         [self pushMemRecallValueToOperand];
@@ -72,7 +72,7 @@
     [self.brain manipulateInputStringForSignChange];
     
     if (!isMemRecalled) {
-        self.brain.rightOperand = [self.brain.inputString doubleValue];
+        self.brain.rightOperand = [self.brain.inputStringForOperand doubleValue];
     }
     
     return brainState_self;
@@ -86,7 +86,7 @@
     
     if (!isDecimalPressed) {
         isDecimalPressed = YES;
-        self.brain.inputString = [self.brain.inputString stringByAppendingString:@"."];
+        self.brain.inputStringForOperand = [self.brain.inputStringForOperand stringByAppendingString:@"."];
     }
     return brainState_self;
 }
@@ -95,7 +95,7 @@
 {
     isMemRecalled = YES;
     isDecimalPressed = NO;
-    self.brain.inputString = [NSString stringWithFormat:@"%g", self.brain.memoryStore];
+    self.brain.inputStringForOperand = [NSString stringWithFormat:@"%g", self.brain.memoryStore];
     
     return brainState_self;
 }
@@ -103,20 +103,20 @@
 - (void)cancleMemRecall
 {
     isMemRecalled = NO;
-    self.brain.inputString = @"0";
+    self.brain.inputStringForOperand = @"0";
 }
 
 - (void)pushMemRecallValueToOperand
 {
-    self.brain.RightOperand = [self.brain.inputString doubleValue];
+    self.brain.RightOperand = [self.brain.inputStringForOperand doubleValue];
 }
 
 - (void)cleanBeforeLeave
 {
     self.brain.rightOperand = 0;
     self.brain.leftOperand = 0;
-    self.brain.operatorString = invalid;
-    self.brain.inputString = @"0";
+    self.brain.operatorType = invalid;
+    self.brain.inputStringForOperand = @"0";
     
     isDecimalPressed = NO;
     isMemRecalled = NO;

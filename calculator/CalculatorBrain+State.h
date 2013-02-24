@@ -10,9 +10,9 @@
 
 @interface CalculatorBrain (State)
 
-@property (nonatomic, strong) NSString *inputString;
+@property (nonatomic, strong) NSString *inputStringForOperand;
 @property (nonatomic) double leftOperand;
-@property (nonatomic) operatorType operatorString;
+@property (nonatomic) basicArithmeticOperator operatorType;
 @property (nonatomic) double rightOperand;
 @property (nonatomic) double calculationResult;
 @property (nonatomic) double memoryStore;

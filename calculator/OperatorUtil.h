@@ -10,12 +10,12 @@
 
 typedef enum {
     invalid = -1, add, sub, multiply, divide
-} operatorType;
+} basicArithmeticOperator;
 
 typedef enum {
     memRecall, memSub, memAdd, memClear
 } memoryFunctionType;
 
 @interface OperatorUtil : NSObject
-+ (NSString *)stringValue:(operatorType)type;
++ (NSString *)stringValue:(basicArithmeticOperator)type;
 @end
